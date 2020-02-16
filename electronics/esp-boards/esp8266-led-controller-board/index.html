@@ -426,9 +426,59 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ESP8266 LED
+      </label>
+    
     <a href="./" title="ESP8266 LED" class="md-nav__link md-nav__link--active">
       ESP8266 LED
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-components-used" class="md-nav__link">
+    Main components used
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esphome-firmware" class="md-nav__link">
+    ESPHome firmware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-measurements" class="md-nav__link">
+    Current measurements
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -580,6 +630,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-components-used" class="md-nav__link">
+    Main components used
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esphome-firmware" class="md-nav__link">
+    ESPHome firmware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-measurements" class="md-nav__link">
+    Current measurements
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -594,12 +681,38 @@
                 
                 
                 <h1 id="esp8266-led-controller-board">ESP8266-LED-Controller-Board</h1>
+<p>This is a small board to control LED strips through <a href="https://esphome.io">ESPHome <i class="fa fa-external-link"></i></a>.
+It can support either normal RGB LED strips, with optional warm white (WW) and/or cold white (CW) LEDs, as well as smart addressable LED strips.
+It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full project is available on the GitHub repository.</p>
 <ul>
 <li><a href="https://github.com/hampussandberg/esp-boards/tree/master/ESP8266-LED-Controller-Board">GitHub repository <i class="fa fa-external-link"></i></a></li>
-<li><a href="ESP8266-LED-Controller-Board-ibom.html" target="_blank">Interactive BOM</a></li>
+<li><a href="ESP8266-LED-Controller-Board-ibom.html" target="_blank">Interactive BOM</a>, created using <a href="https://github.com/openscopeproject/InteractiveHtmlBom">InteractiveHtmlBom <i class="fa fa-external-link"></i></a></li>
 </ul>
 <p><a href="3d-top.png"><img alt="" src="3d-top.png" style="width:100%" /></a></p>
-<p>Interactive BOM created using: <a href="https://github.com/openscopeproject/InteractiveHtmlBom">https://github.com/openscopeproject/InteractiveHtmlBom</a></p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>ESPHome compatible</li>
+<li>Control of 12 V RGB LED strip, with optional WW and/or CW LEDs</li>
+<li>Control of 5 V "smart" LED strips (WS2812, APA102, SK6812, etc)</li>
+<li>Measurement of LED current [optional]</li>
+<li>Pluggable screw terminal connections for LED strip(s)</li>
+<li>Serial header with boot button for initial programming, over-the-air (OTA) after</li>
+<li>I2C header with any remaining pins for connection of additional sensors [optional]</li>
+<li>USB-C connector for 5 V power [optional]</li>
+<li>2.1 mm, positive center DC power jack for 5 V to 12 V power</li>
+</ul>
+<h2 id="main-components-used">Main components used</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/ESP8266">ESP-12F <i class="fa fa-external-link"></i></a> module with ESP8266 chip</li>
+<li><a href="https://www.onsemi.com/pub/Collateral/NTD5867NL-D.PDF">NTD5867NLT4G <i class="fa fa-external-link"></i></a>, N-channel MOSFET</li>
+<li><a href="http://www.ti.com/product/TPS563200">TPS563200 <i class="fa fa-external-link"></i></a>, step-down voltage regulator</li>
+<li><a href="https://www.allegromicro.com/~/media/Files/Datasheets/ACS70331-Datasheet.ashx">ACS70331EESATR-005U3 <i class="fa fa-external-link"></i></a>, giant magneto-resistive (<a href="https://en.wikipedia.org/wiki/Giant_magnetoresistance">GMR <i class="fa fa-external-link"></i></a>) current sensor, 0 to 5 A, 3.3 V supply, analog output</li>
+<li><a href="https://www.ti.com/product/SN74LVC2G17">74LVC2G17 <i class="fa fa-external-link"></i></a>, dual schmitt-trigger buffer, 3.3 V to 5 V logic conversion for "smart" LED strips</li>
+</ul>
+<h2 id="esphome-firmware">ESPHome firmware</h2>
+<p>TODO</p>
+<h2 id="current-measurements">Current measurements</h2>
+<p>TODO</p>
                 
                   
                 
@@ -705,7 +818,7 @@
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
-          - Built on 2020-02-16 14:41:49
+          - Built on 2020-02-16 19:12:01
       </div>
 
       <!-- Social links -->
