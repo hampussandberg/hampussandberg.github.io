@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://hampussandberg.github.io/electronics/esp-boards/esp8266-led-controller-board/">
+        <link rel="canonical" href="https://hampussandberg.github.io/electronics/esp-boards/esp8266-cherry-mx-board/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>ESP8266 LED - hampussandberg.github.io</title>
+        <title>ESP8266 Switches - hampussandberg.github.io</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#esp8266-led-controller-board" tabindex="1" class="md-skip">
+      <a href="#esp8266-cherry-mx-board" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                ESP8266 LED
+                ESP8266 Switches
               
             </span>
           
@@ -416,6 +416,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../esp8266-led-controller-board/" title="ESP8266 LED" class="md-nav__link">
+      ESP8266 LED
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -427,11 +439,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        ESP8266 LED
+        ESP8266 Switches
       </label>
     
-    <a href="./" title="ESP8266 LED" class="md-nav__link md-nav__link--active">
-      ESP8266 LED
+    <a href="./" title="ESP8266 Switches" class="md-nav__link md-nav__link--active">
+      ESP8266 Switches
     </a>
     
       
@@ -465,13 +477,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#current-measurements" class="md-nav__link">
-    Current measurements
-  </a>
-  
-</li>
-      
       
       
       
@@ -480,18 +485,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../esp8266-cherry-mx-board/" title="ESP8266 Switches" class="md-nav__link">
-      ESP8266 Switches
-    </a>
   </li>
 
         
@@ -702,13 +695,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#current-measurements" class="md-nav__link">
-    Current measurements
-  </a>
-  
-</li>
-      
       
       
       
@@ -725,41 +711,35 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/hampussandberg/docs/edit/master/docs/electronics/esp-boards/esp8266-led-controller-board/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/hampussandberg/docs/edit/master/docs/electronics/esp-boards/esp8266-cherry-mx-board/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="esp8266-led-controller-board">ESP8266-LED-Controller-Board</h1>
-<p>This is a small board to control LED strips through <a href="https://esphome.io">ESPHome <i class="fa fa-external-link"></i></a>.
-It can support either normal RGB LED strips, with optional warm white (WW) and/or cold white (CW) LEDs, as well as smart addressable LED strips.
+                <h1 id="esp8266-cherry-mx-board">ESP8266-Cherry-MX-Board</h1>
+<p>This is a board with switches and a display designed to interface <a href="https://www.home-assistant.io">Home Assistant <i class="fa fa-external-link"></i></a>. through <a href="https://esphome.io">ESPHome <i class="fa fa-external-link"></i></a>.
 It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full project is available on the GitHub repository.</p>
 <ul>
-<li><a href="https://github.com/hampussandberg/esp-boards/tree/master/ESP8266-LED-Controller-Board">GitHub repository <i class="fa fa-external-link"></i></a></li>
-<li><a href="ESP8266-LED-Controller-Board-ibom.html" target="_blank">Interactive BOM</a>, created using <a href="https://github.com/openscopeproject/InteractiveHtmlBom">InteractiveHtmlBom <i class="fa fa-external-link"></i></a></li>
+<li><a href="https://github.com/hampussandberg/esp-boards/tree/master/ESP8266-Cherry-MX-Board">GitHub repository <i class="fa fa-external-link"></i></a></li>
+<li><a href="ESP8266-Cherry-MX-Board-ibom.html" target="_blank">Interactive BOM</a>, created using <a href="https://github.com/openscopeproject/InteractiveHtmlBom">InteractiveHtmlBom <i class="fa fa-external-link"></i></a></li>
 </ul>
-<p><a href="3d-top.png"><img alt="" src="3d-top.png" style="width:100%" /></a></p>
+<p><a href="3d-top.png"><img alt="" src="3d-top.png" style="width:100%" /></a>
+<a href="3d-bottom.png"><img alt="" src="3d-bottom.png" style="width:100%" /></a></p>
 <h2 id="requirements">Requirements</h2>
 <ul>
 <li>ESPHome compatible</li>
-<li>Control of 12 V RGB LED strip, with optional WW and/or CW LEDs</li>
-<li>Control of 5 V "smart" LED strips (WS2812, APA102, SK6812, etc)</li>
-<li>Measurement of LED current [optional]</li>
-<li>Pluggable screw terminal connections for LED strip(s)</li>
+<li>4x Cherry MX keys</li>
+<li>1x Rotary encoder with switch</li>
+<li>OLED display</li>
+<li>Low input voltage power power converter (TPS61200)</li>
 <li>Serial header with boot button for initial programming, over-the-air (OTA) after</li>
 <li>I2C header with any remaining pins for connection of additional sensors [optional]</li>
 <li>USB-C connector for 5 V power [optional]</li>
-<li>2.1 mm, positive center DC power jack for 5 V to 12 V power</li>
 </ul>
 <h2 id="main-components-used">Main components used</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/ESP8266">ESP-12F <i class="fa fa-external-link"></i></a> module with ESP8266 chip</li>
-<li><a href="https://www.onsemi.com/pub/Collateral/NTD5867NL-D.PDF">NTD5867NLT4G <i class="fa fa-external-link"></i></a>, N-channel MOSFET</li>
-<li><a href="http://www.ti.com/product/TPS563200">TPS563200 <i class="fa fa-external-link"></i></a>, step-down voltage regulator</li>
-<li><a href="https://www.allegromicro.com/~/media/Files/Datasheets/ACS70331-Datasheet.ashx">ACS70331EESATR-005U3 <i class="fa fa-external-link"></i></a>, giant magneto-resistive (<a href="https://en.wikipedia.org/wiki/Giant_magnetoresistance">GMR <i class="fa fa-external-link"></i></a>) current sensor, 0 to 5 A, 3.3 V supply, analog output</li>
-<li><a href="https://www.ti.com/product/SN74LVC2G17">74LVC2G17 <i class="fa fa-external-link"></i></a>, dual schmitt-trigger buffer, 3.3 V to 5 V logic conversion for "smart" LED strips</li>
+<li><a href="http://www.ti.com/product/TPS61200">TPS61200 <i class="fa fa-external-link"></i></a>, low input voltage boost converter</li>
 </ul>
 <h2 id="esphome-firmware">ESPHome firmware</h2>
-<p>TODO</p>
-<h2 id="current-measurements">Current measurements</h2>
 <p>TODO</p>
                 
                   
@@ -809,8 +789,8 @@ It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full proj
 
         <!-- Link to previous page -->
         
-          <a href="../../hex-connect/overview/"
-              title="HexConnect"
+          <a href="../esp8266-led-controller-board/"
+              title="ESP8266 LED"
               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
               rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -823,7 +803,7 @@ It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full proj
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                HexConnect
+                ESP8266 LED
               </span>
             </div>
           </a>
@@ -831,8 +811,8 @@ It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full proj
 
         <!-- Link to next page -->
         
-          <a href="../esp8266-cherry-mx-board/"
-              title="ESP8266 Switches"
+          <a href="../../radiation-detector/"
+              title="Radiation Detector"
               class="md-flex md-footer-nav__link md-footer-nav__link--next"
               rel="next">
             <div class="md-flex__cell md-flex__cell--stretch
@@ -841,7 +821,7 @@ It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full proj
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                ESP8266 Switches
+                Radiation Detector
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
