@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <link rel="canonical" href="https://hampussandberg.github.io/electronics/esp-boards/esp8266-led-controller-board/">
+        <link rel="canonical" href="https://hampussandberg.github.io/electronics/esp-boards/ft230x-serial-board/">
       
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
@@ -17,7 +17,7 @@
     
     
       
-        <title>ESP8266 LED - hampussandberg.github.io</title>
+        <title>FT230X Serial Board - hampussandberg.github.io</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#esp8266-led-controller-board" class="md-skip">
+        <a href="#ft230x-serial-board" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              ESP8266 LED
+              FT230X Serial Board
             
           </span>
         </div>
@@ -409,74 +409,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        ESP8266 LED
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="ESP8266 LED" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../esp8266-led-controller-board/" title="ESP8266 LED" class="md-nav__link">
       ESP8266 LED
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#main-components-used" class="md-nav__link">
-    Main components used
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#esphome-firmware" class="md-nav__link">
-    ESPHome firmware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#current-measurements" class="md-nav__link">
-    Current measurements
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -496,11 +433,60 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ft230x-serial-board/" title="FT230X Serial Board" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        FT230X Serial Board
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="FT230X Serial Board" class="md-nav__link md-nav__link--active">
       FT230X Serial Board
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-components-used" class="md-nav__link">
+    Main components used
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -768,8 +754,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
+  <a href="#features" class="md-nav__link">
+    Features
   </a>
   
 </li>
@@ -777,20 +763,6 @@
         <li class="md-nav__item">
   <a href="#main-components-used" class="md-nav__link">
     Main components used
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#esphome-firmware" class="md-nav__link">
-    ESPHome firmware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#current-measurements" class="md-nav__link">
-    Current measurements
   </a>
   
 </li>
@@ -807,7 +779,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/hampussandberg/docs/edit/master/docs/electronics/esp-boards/esp8266-led-controller-board/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/hampussandberg/docs/edit/master/docs/electronics/esp-boards/ft230x-serial-board/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -815,39 +787,31 @@
                   
                 
                 
-                <h1 id="esp8266-led-controller-board">ESP8266-LED-Controller-Board</h1>
-<p>This is a small board to control LED strips through <a href="https://esphome.io">ESPHome <i class="fa fa-external-link"></i></a>.
-It can support either normal RGB LED strips, with optional warm white (WW) and/or cold white (CW) LEDs, as well as smart addressable LED strips.
-It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full project is available on the GitHub repository.</p>
+                <h1 id="ft230x-serial-board">FT230X Serial Board</h1>
+<p>This is a small board for breaking out the pins of the FT230X with a USB-C connector.
+It was designed in KiCad version 5.1.6 on macOS 10.15 Catalina and the full project is available on the GitHub repository.</p>
 <ul>
-<li><a href="https://github.com/hampussandberg/esp-boards/tree/master/ESP8266-LED-Controller-Board">GitHub repository <i class="fa fa-external-link"></i></a></li>
-<li><a href="ESP8266-LED-Controller-Board-ibom.html" target="_blank">Interactive BOM</a>, created using <a href="https://github.com/openscopeproject/InteractiveHtmlBom">InteractiveHtmlBom <i class="fa fa-external-link"></i></a></li>
+<li><a href="https://github.com/hampussandberg/esp-boards/tree/master/FT230X-Serial-Board">GitHub repository <i class="fa fa-external-link"></i></a></li>
+<li><a href="FT230X-Serial-Board-ibom.html" target="_blank">Interactive BOM</a>, created using <a href="https://github.com/openscopeproject/InteractiveHtmlBom">InteractiveHtmlBom <i class="fa fa-external-link"></i></a></li>
 </ul>
-<p><a href="3d-top.png"><img alt="" src="3d-top.png" style="width:100%" /></a></p>
-<h2 id="requirements">Requirements</h2>
+<p><a href="3d-top.png"><img alt="" src="3d-top.png" style="width:100%" /></a>
+<a href="3d-bottom.png"><img alt="" src="3d-bottom.png" style="width:100%" /></a></p>
+<h2 id="features">Features</h2>
 <ul>
-<li>ESPHome compatible</li>
-<li>Control of 12 V RGB LED strip, with optional WW and/or CW LEDs</li>
-<li>Control of 5 V "smart" LED strips (WS2812, APA102, SK6812, etc)</li>
-<li>Measurement of LED current [optional]</li>
-<li>Pluggable screw terminal connections for LED strip(s)</li>
-<li>Serial header with boot button for initial programming, over-the-air (OTA) after</li>
-<li>I2C header with any remaining pins for connection of additional sensors [optional]</li>
-<li>USB-C connector for 5 V power [optional]</li>
-<li>2.1 mm, positive center DC power jack for 5 V to 12 V power</li>
+<li>USB-C connector with ESD protection chip</li>
+<li>Polyfuse on VUSB power rail</li>
+<li>2.54 mm spaced headers for breadboard compatibility</li>
+<li>All pins of FT230X available on the headers</li>
+<li>Jumpers on the bottom of the board to select between different voltages and self vs bus powered mode</li>
+<li>LEDs for VCC and VIO</li>
+<li>LEDs for TX and RX activity (must program the FT230X CBUS pins for these LEDs to work)</li>
+<li>4 layer board (can be redesigned for 2 layers, but due to the small size the price difference is negligible)</li>
 </ul>
 <h2 id="main-components-used">Main components used</h2>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/ESP8266">ESP-12F <i class="fa fa-external-link"></i></a> module with ESP8266 chip</li>
-<li><a href="https://www.onsemi.com/pub/Collateral/NTD5867NL-D.PDF">NTD5867NLT4G <i class="fa fa-external-link"></i></a>, N-channel MOSFET</li>
-<li><a href="http://www.ti.com/product/TPS563200">TPS563200 <i class="fa fa-external-link"></i></a>, step-down voltage regulator</li>
-<li><a href="https://www.allegromicro.com/~/media/Files/Datasheets/ACS70331-Datasheet.ashx">ACS70331EESATR-005U3 <i class="fa fa-external-link"></i></a>, giant magneto-resistive (<a href="https://en.wikipedia.org/wiki/Giant_magnetoresistance">GMR <i class="fa fa-external-link"></i></a>) current sensor, 0 to 5 A, 3.3 V supply, analog output</li>
-<li><a href="https://www.ti.com/product/SN74LVC2G17">74LVC2G17 <i class="fa fa-external-link"></i></a>, dual schmitt-trigger buffer, 3.3 V to 5 V logic conversion for "smart" LED strips</li>
+<li><a href="https://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT230X.pdf">FT230X <i class="fa fa-external-link"></i></a> USB to BASIC UART IC</li>
+<li><a href="https://assets.nexperia.com/documents/data-sheet/IP4234CZ6.pdf">IP4234CZ6 <i class="fa fa-external-link"></i></a> USB 2.0 ESD protection</li>
 </ul>
-<h2 id="esphome-firmware">ESPHome firmware</h2>
-<p>TODO</p>
-<h2 id="current-measurements">Current measurements</h2>
-<p>TODO</p>
                 
               
               
@@ -894,8 +858,8 @@ It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full proj
 
         <!-- Link to previous page -->
         
-          <a href="../../hex-connect/overview/"
-              title="HexConnect"
+          <a href="../esp8266-cherry-mx-board/"
+              title="ESP8266 Cherry MX"
               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
               rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -908,7 +872,7 @@ It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full proj
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                HexConnect
+                ESP8266 Cherry MX
               </span>
             </div>
           </a>
@@ -916,8 +880,8 @@ It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full proj
 
         <!-- Link to next page -->
         
-          <a href="../esp8266-cherry-mx-board/"
-              title="ESP8266 Cherry MX"
+          <a href="../../radiation-detector/"
+              title="Radiation Detector"
               class="md-flex md-footer-nav__link md-footer-nav__link--next"
               rel="next">
             <div class="md-flex__cell md-flex__cell--stretch
@@ -926,7 +890,7 @@ It was designed in KiCad version 5.1.5 on macOS 10.15 Catalina and the full proj
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                ESP8266 Cherry MX
+                Radiation Detector
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
