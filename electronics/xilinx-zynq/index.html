@@ -1,0 +1,1475 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <link rel="canonical" href="https://hampussandberg.github.io/electronics/xilinx-zynq/">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>Xilinx Zynq - hampussandberg.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="grey" data-md-color-accent="orange">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#xilinx-zynq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://hampussandberg.github.io" title="hampussandberg.github.io" class="md-header-nav__button md-logo" aria-label="hampussandberg.github.io">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            hampussandberg.github.io
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Xilinx Zynq
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/hampussandberg/docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." class="md-tabs__link">
+          Home
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../overview/" class="md-tabs__link md-tabs__link--active">
+          Electronics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../3d-printing/overview/" class="md-tabs__link">
+          3D Printing
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../photography/overview/" class="md-tabs__link">
+          Photography
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../cooking-baking/overview/" class="md-tabs__link">
+          Cooking & Baking
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://hampussandberg.github.io" title="hampussandberg.github.io" class="md-nav__button md-logo" aria-label="hampussandberg.github.io">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    hampussandberg.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/hampussandberg/docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Home" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../example-markdown/" title="Example Markdown" class="md-nav__link">
+      Example Markdown
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Electronics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Electronics" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Electronics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kicad/" title="KiCad" class="md-nav__link">
+      KiCad
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hex-connect/overview/" title="HexConnect" class="md-nav__link">
+      HexConnect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      ESP Boards
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="ESP Boards" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        ESP Boards
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../esp-boards/esp8266-led-controller-board/" title="ESP8266 LED" class="md-nav__link">
+      ESP8266 LED
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../esp-boards/esp8266-cherry-mx-board/" title="ESP8266 Cherry MX" class="md-nav__link">
+      ESP8266 Cherry MX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../esp-boards/ft230x-serial-board/" title="FT230X Serial Board" class="md-nav__link">
+      FT230X Serial Board
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../esp-boards/esp32-cam-power-board/" title="ESP32 Camera Power Board" class="md-nav__link">
+      ESP32 Camera Power Board
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../radiation-detector/" title="Radiation Detector" class="md-nav__link">
+      Radiation Detector
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Teardowns
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Teardowns" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Teardowns
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../teardowns/kreyos-smart-watch/" title="Kreyos Smart Watch" class="md-nav__link">
+      Kreyos Smart Watch
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../5x5-led-matrix/" title="5x5 LED Matrix" class="md-nav__link">
+      5x5 LED Matrix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Xilinx Zynq
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Xilinx Zynq" class="md-nav__link md-nav__link--active">
+      Xilinx Zynq
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mpsoc" class="md-nav__link">
+    MPSoC
+  </a>
+  
+    <nav class="md-nav" aria-label="MPSoC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mpsoc-displayport" class="md-nav__link">
+    MPSoC Displayport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpsoc-heterogeneous-architecture" class="md-nav__link">
+    MPSoC heterogeneous architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpsoc-multiprocessing" class="md-nav__link">
+    MPSoC multiprocessing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#petalinux-on-zybo-board" class="md-nav__link">
+    Petalinux on Zybo board
+  </a>
+  
+    <nav class="md-nav" aria-label="Petalinux on Zybo board">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-16043-lts-virtual-machine" class="md-nav__link">
+    Ubuntu 16.04.3 LTS virtual machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dependencies" class="md-nav__link">
+    Install dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#petalinux-install" class="md-nav__link">
+    Petalinux install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#petalinux-bsp-file-download-for-zybo-board" class="md-nav__link">
+    Petalinux BSP file download for Zybo board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-project-from-the-bsp-file" class="md-nav__link">
+    Create a project from the BSP file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-the-petalinux-project" class="md-nav__link">
+    Build the petalinux project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emulate-in-qemu" class="md-nav__link">
+    Emulate in QEMU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-the-project" class="md-nav__link">
+    Package the project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot-on-zybo-board" class="md-nav__link">
+    Boot on Zybo board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-resources" class="md-nav__link">
+    Other resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      3D Printing
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="3D Printing" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        3D Printing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3d-printing/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Photography
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Photography" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Photography
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../photography/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../photography/laowa-25mm-macro/" title="Laowa 25mm Macro" class="md-nav__link">
+      Laowa 25mm Macro
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Cooking & Baking
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Cooking & Baking" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Cooking & Baking
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cooking-baking/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cooking-baking/milk-alternatives/" title="Milk Alternatives" class="md-nav__link">
+      Milk Alternatives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cooking-baking/chocolate-balls/" title="Chocolate Balls" class="md-nav__link">
+      Chocolate Balls
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mpsoc" class="md-nav__link">
+    MPSoC
+  </a>
+  
+    <nav class="md-nav" aria-label="MPSoC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mpsoc-displayport" class="md-nav__link">
+    MPSoC Displayport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpsoc-heterogeneous-architecture" class="md-nav__link">
+    MPSoC heterogeneous architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpsoc-multiprocessing" class="md-nav__link">
+    MPSoC multiprocessing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#petalinux-on-zybo-board" class="md-nav__link">
+    Petalinux on Zybo board
+  </a>
+  
+    <nav class="md-nav" aria-label="Petalinux on Zybo board">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-16043-lts-virtual-machine" class="md-nav__link">
+    Ubuntu 16.04.3 LTS virtual machine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dependencies" class="md-nav__link">
+    Install dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#petalinux-install" class="md-nav__link">
+    Petalinux install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#petalinux-bsp-file-download-for-zybo-board" class="md-nav__link">
+    Petalinux BSP file download for Zybo board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-project-from-the-bsp-file" class="md-nav__link">
+    Create a project from the BSP file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-the-petalinux-project" class="md-nav__link">
+    Build the petalinux project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emulate-in-qemu" class="md-nav__link">
+    Emulate in QEMU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-the-project" class="md-nav__link">
+    Package the project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot-on-zybo-board" class="md-nav__link">
+    Boot on Zybo board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-resources" class="md-nav__link">
+    Other resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/hampussandberg/docs/edit/master/docs/electronics/xilinx-zynq/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="xilinx-zynq">Xilinx Zynq</h1>
+<p>This page is a collection of notes and how-to guides for the <a href="https://www.xilinx.com/products/silicon-devices/soc.html" target="_blank">Xilinx Zynq <i class="fa fa-external-link"></i></a> SoC devices.</p>
+<h2 id="mpsoc">MPSoC</h2>
+<ul>
+<li>Wiki: <a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/444006775/Zynq+UltraScale+MPSoC">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/444006775/Zynq+UltraScale+MPSoC</a></li>
+<li>Linux: <a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841996/Linux">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841996/Linux</a></li>
+<li>Design resources: <a href="https://www.xilinx.com/support/documentation-navigation/design-hubs/dh0070-zynq-mpsoc-design-overview-hub.html">https://www.xilinx.com/support/documentation-navigation/design-hubs/dh0070-zynq-mpsoc-design-overview-hub.html</a></li>
+<li>Examples:<ul>
+<li>Ethernet: <a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/478937213/MPSoC+PS+and+PL+Ethernet+Example+Projects">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/478937213/MPSoC+PS+and+PL+Ethernet+Example+Projects</a></li>
+<li>Ubuntu desktop: <a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/148668419/Zynq+UltraScale+MPSoC+Ubuntu+VCU+Gstreamer+-+Building+and+Running+Ubuntu+Desktop+from+Sources">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/148668419/Zynq+UltraScale+MPSoC+Ubuntu+VCU+Gstreamer+-+Building+and+Running+Ubuntu+Desktop+from+Sources</a></li>
+<li>USB 3.0: <a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/968785932/USB+Device+for+PL+Data+Acquisition+on+Zynq+UltraScale+MPSoC">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/968785932/USB+Device+for+PL+Data+Acquisition+on+Zynq+UltraScale+MPSoC</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="mpsoc-displayport">MPSoC Displayport</h3>
+<ul>
+<li>Example: <a href="https://www.hackster.io/news/microzed-chronicles-displayport-controller-part-one-25734db13fad">https://www.hackster.io/news/microzed-chronicles-displayport-controller-part-one-25734db13fad</a>, <a href="https://www.hackster.io/news/microzed-chronicles-displayport-controller-part-two-1fa042f7a242">https://www.hackster.io/news/microzed-chronicles-displayport-controller-part-two-1fa042f7a242</a></li>
+<li>Video can be provided either from PS (non-live) or PL (live)</li>
+</ul>
+<h3 id="mpsoc-heterogeneous-architecture">MPSoC heterogeneous architecture</h3>
+<ul>
+<li>Example: <a href="https://www.hackster.io/pablotrujillojuan/using-apu-rpu-pl-on-genesys-zu-7b6ed2">https://www.hackster.io/pablotrujillojuan/using-apu-rpu-pl-on-genesys-zu-7b6ed2</a></li>
+<li>APU: Dual/Quad Arm Cortex-A53<ul>
+<li>Linux capable</li>
+</ul>
+</li>
+<li>RPU: Dual Arm Cortex-R5F<ul>
+<li>Access to local program memories (TCM)</li>
+</ul>
+</li>
+</ul>
+<h3 id="mpsoc-multiprocessing">MPSoC multiprocessing</h3>
+<p>See chapter 6 of <a href="https://www.xilinx.com/support/documentation/user_guides/ug1137-zynq-ultrascale-mpsoc-swdev.pdf">Xilinx UG1137</a>.</p>
+<ul>
+<li>Symmetric Multiprocessing (SMP): The use of multiple processors by a single operating system.</li>
+<li>Asymmetric Multiprocessing (AMP): Multiple processor with specific task for each<ul>
+<li>OpenAMP: <a href="https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_2/ug1186-zynq-openamp-gsg.pdf">https://www.xilinx.com/support/documentation/sw_manuals/xilinx2020_2/ug1186-zynq-openamp-gsg.pdf</a></li>
+<li>Example: <a href="https://github.com/topalovicdraganl/nativeAMP">https://github.com/topalovicdraganl/nativeAMP</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="petalinux-on-zybo-board">Petalinux on Zybo board</h2>
+<p>Based on instructions in <a href="https://github.com/Digilent/Petalinux-Zybo/blob/v2017.4-1/README.md">https://github.com/Digilent/Petalinux-Zybo/blob/v2017.4-1/README.md</a></p>
+<h3 id="ubuntu-16043-lts-virtual-machine">Ubuntu 16.04.3 LTS virtual machine</h3>
+<p>The instructions suggest to use version 16.04.3 of Ubuntu which can be found on <a href="https://old-releases.ubuntu.com/releases/16.04.3/">https://old-releases.ubuntu.com/releases/16.04.3/</a> (<a href="https://old-releases.ubuntu.com/releases/16.04.3/ubuntu-16.04.3-desktop-amd64.iso">direct ISO download link</a>).
+It was installed as a virtual machine using Parallels Desktop 16.1.3 running on macOS 11.2.2.</p>
+<h3 id="install-dependencies">Install dependencies</h3>
+<div class="highlight"><pre><span></span><code>sudo apt-get install tofrodos gawk xvfb git libncurses5-dev tftpd <span class="se">\</span>
+  zlib1g-dev zlib1g-dev:i386 libssl-dev flex bison chrpath socat <span class="se">\</span>
+  autoconf libtool texinfo gcc-multilib libsdl1.2-dev libglib2.0-dev <span class="se">\</span>
+  screen pax
+sudo reboot
+</code></pre></div>
+
+<p>TFTP server:
+<div class="highlight"><pre><span></span><code>sudo apt-get install apt-get install tftpd-hpa
+sudo chmod a+w /var/lib/tftpboot/
+sudo reboot
+</code></pre></div></p>
+<h3 id="petalinux-install">Petalinux install</h3>
+<p>Prepare install location:
+<div class="highlight"><pre><span></span><code>sudo mkdir -p /opt/pkg/petalinux
+sudo chown <span class="nv">$USER</span> /opt/pkg/
+sudo chgrp <span class="nv">$USER</span> /opt/pkg/
+sudo chgrp <span class="nv">$USER</span> /opt/pkg/petalinux/
+sudo chown <span class="nv">$USER</span> /opt/pkg/petalinux/
+</code></pre></div></p>
+<p>Download the installer from Xilinx (requires login): <a href="https://www.xilinx.com/member/forms/download/xef.html?filename=petalinux-v2017.4-final-installer.run">https://www.xilinx.com/member/forms/download/xef.html?filename=petalinux-v2017.4-final-installer.run</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Go to the directory where the install file was downloaded to</span>
+<span class="nb">cd</span> ~/Downloads
+chmod +x ./petalinux-v2017.4-final-installer.run
+./petalinux-v2017.4-final-installer.run /opt/pkg/petalinux
+<span class="c1"># Accept the license agreements</span>
+</code></pre></div>
+
+<p><strong>NOTE:</strong> Before running any petalinux commands the following file should be sourced
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> /opt/pkg/petalinux/settings.sh
+</code></pre></div></p>
+<h3 id="petalinux-bsp-file-download-for-zybo-board">Petalinux BSP file download for Zybo board</h3>
+<p>NOTE: The .bsp file must be on the virtual machines filesystem.
+I tried to have it on the Mac and access it through a shared folder on thee virtual machine which did not work with the next step.
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/Downloads
+wget https://github.com/Digilent/Petalinux-Zybo/releases/download/v2017.4-1/Petalinux-Zybo-2017.4-1.bsp
+</code></pre></div></p>
+<h3 id="create-a-project-from-the-bsp-file">Create a project from the BSP file</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/Downloads
+petalinux-create -t project -s Petalinux-Zybo-2017.4-1.bsp
+</code></pre></div>
+
+<h3 id="build-the-petalinux-project">Build the petalinux project</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> Zybo
+petalinux-build
+</code></pre></div>
+
+<h3 id="emulate-in-qemu">Emulate in QEMU</h3>
+<p>Based on information from <a href="https://www.beyond-circuits.com/wordpress/tutorial/tutorial23/">https://www.beyond-circuits.com/wordpress/tutorial/tutorial23/</a>
+<div class="highlight"><pre><span></span><code>petalinux-boot --qemu --kernel
+</code></pre></div>
+Type <code>control-A x</code> to exit the emulator.</p>
+<details class="example"><summary>Example output</summary><div class="highlight"><pre><span></span><code>ubuntu@ubuntu:~/Downloads/Zybo$ petalinux-boot --qemu --kernel
+INFO: The image provided is a zImage
+INFO: TCP PORT is free 
+INFO: Starting arm QEMU
+INFO:  qemu-system-aarch64 -M arm-generic-fdt-7series -machine <span class="nv">linux</span><span class="o">=</span>on   -serial /dev/null -serial mon:stdio -display none -kernel /home/ubuntu/Downloads/Zybo/build/qemu_image.elf -gdb tcp::9000 -dtb /home/ubuntu/Downloads/Zybo/images/linux/system.dtb  -net nic,vlan<span class="o">=</span><span class="m">1</span> -net user,vlan<span class="o">=</span><span class="m">1</span>,tftp<span class="o">=</span>/var/lib/tftpboot -net nic -device loader,addr<span class="o">=</span>0xf8000008,data<span class="o">=</span>0xDF0D,data-len<span class="o">=</span><span class="m">4</span> -device loader,addr<span class="o">=</span>0xf8000140,data<span class="o">=</span>0x00500801,data-len<span class="o">=</span><span class="m">4</span> -device loader,addr<span class="o">=</span>0xf800012c,data<span class="o">=</span>0x1ed044d,data-len<span class="o">=</span><span class="m">4</span> -device loader,addr<span class="o">=</span>0xf8000108,data<span class="o">=</span>0x0001e008,data-len<span class="o">=</span><span class="m">4</span> -device loader,addr<span class="o">=</span>0xF8000910,data<span class="o">=</span>0xF,data-len<span class="o">=</span>0x4    
+Warning: vlan <span class="m">0</span> is not connected to host network
+rom: requested regions overlap <span class="o">(</span>rom bootloader. <span class="nv">free</span><span class="o">=</span>0x0000000002d6b930, <span class="nv">addr</span><span class="o">=</span>0x0000000000000000<span class="o">)</span>
+Uncompressing Linux... <span class="k">done</span>, booting the kernel.
+Booting Linux on physical CPU 0x0
+Linux version <span class="m">4</span>.9.0-xilinx-v2017.4 <span class="o">(</span>ubuntu@ubuntu<span class="o">)</span> <span class="o">(</span>gcc version <span class="m">6</span>.2.1 <span class="m">20161016</span> <span class="o">(</span>Linaro GCC <span class="m">6</span>.2-2016.11<span class="o">)</span> <span class="o">)</span> <span class="c1">#3 SMP PREEMPT Sat Apr 24 17:59:37 CEST 2021</span>
+CPU: ARMv7 Processor <span class="o">[</span>410fc090<span class="o">]</span> revision <span class="m">0</span> <span class="o">(</span>ARMv7<span class="o">)</span>, <span class="nv">cr</span><span class="o">=</span>10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+OF: fdt:Machine model: Zynq Zybo Development Board
+bootconsole <span class="o">[</span>earlycon0<span class="o">]</span> enabled
+cma: Reserved <span class="m">64</span> MiB at 0x1c000000
+Memory policy: Data cache writealloc
+percpu: Embedded <span class="m">14</span> pages/cpu @dbbad000 s25932 r8192 d23220 u57344
+Built <span class="m">1</span> zonelists in Zone order, mobility grouping on.  Total pages: <span class="m">130048</span>
+Kernel <span class="nb">command</span> line: <span class="nv">console</span><span class="o">=</span>ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id<span class="o">=</span>generic-uio
+PID <span class="nb">hash</span> table entries: <span class="m">2048</span> <span class="o">(</span>order: <span class="m">1</span>, <span class="m">8192</span> bytes<span class="o">)</span>
+Dentry cache <span class="nb">hash</span> table entries: <span class="m">65536</span> <span class="o">(</span>order: <span class="m">6</span>, <span class="m">262144</span> bytes<span class="o">)</span>
+Inode-cache <span class="nb">hash</span> table entries: <span class="m">32768</span> <span class="o">(</span>order: <span class="m">5</span>, <span class="m">131072</span> bytes<span class="o">)</span>
+Memory: 400692K/524288K available <span class="o">(</span>6144K kernel code, 208K rwdata, 1492K rodata, 44032K init, 231K bss, 58060K reserved, 65536K cma-reserved, 0K highmem<span class="o">)</span>
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   <span class="o">(</span>   <span class="m">4</span> kB<span class="o">)</span>
+    fixmap  : 0xffc00000 - 0xfff00000   <span class="o">(</span><span class="m">3072</span> kB<span class="o">)</span>
+    vmalloc : 0xe0800000 - 0xff800000   <span class="o">(</span> <span class="m">496</span> MB<span class="o">)</span>
+    lowmem  : 0xc0000000 - 0xe0000000   <span class="o">(</span> <span class="m">512</span> MB<span class="o">)</span>
+    pkmap   : 0xbfe00000 - 0xc0000000   <span class="o">(</span>   <span class="m">2</span> MB<span class="o">)</span>
+    modules : 0xbf000000 - 0xbfe00000   <span class="o">(</span>  <span class="m">14</span> MB<span class="o">)</span>
+      .text : 0xc0008000 - 0xc0700000   <span class="o">(</span><span class="m">7136</span> kB<span class="o">)</span>
+      .init : 0xc0900000 - 0xc3400000   <span class="o">(</span><span class="m">44032</span> kB<span class="o">)</span>
+      .data : 0xc3400000 - 0xc3434380   <span class="o">(</span> <span class="m">209</span> kB<span class="o">)</span>
+       .bss : 0xc3434380 - 0xc346e118   <span class="o">(</span> <span class="m">232</span> kB<span class="o">)</span>
+Preemptible hierarchical RCU implementation.
+  Build-time adjustment of leaf fanout to <span class="m">32</span>.
+  RCU restricting CPUs from <span class="nv">NR_CPUS</span><span class="o">=</span><span class="m">4</span> to <span class="nv">nr_cpu_ids</span><span class="o">=</span><span class="m">2</span>.
+RCU: Adjusting geometry <span class="k">for</span> <span class="nv">rcu_fanout_leaf</span><span class="o">=</span><span class="m">32</span>, <span class="nv">nr_cpu_ids</span><span class="o">=</span><span class="m">2</span>
+NR_IRQS:16 nr_irqs:16 <span class="m">16</span>
+efuse mapped to e0800000
+slcr mapped to e0802000
+L2C: platform modifies aux control register: 0x00000000 -&gt; 0x30400000
+L2C: DT/platform modifies aux control register: 0x00000000 -&gt; 0x30400000
+L2C-310 errata <span class="m">588369</span> <span class="m">769419</span> enabled
+L2C-310 full line of zeros enabled <span class="k">for</span> Cortex-A9
+L2C-310 cache controller enabled, <span class="m">8</span> ways, <span class="m">64</span> kB
+L2C-310: CACHE_ID 0x00000000, AUX_CTRL 0x00000000
+zynq_clock_init: clkc starts at e0802100
+Zynq clock init
+global-timer: non support <span class="k">for</span> this cpu version.
+Failed to initialize <span class="s1">&#39;/amba/timer@f8f00200&#39;</span>: -38clocksource: ttc_clocksource: mask: 0xffff max_cycles: 0xffff, max_idle_ns: <span class="m">551318127</span> ns
+sched_clock: <span class="m">16</span> bits at 52kHz, resolution 18904ns, wraps every 619458570ns
+timer <span class="c1">#0 at e080a000, irq=16</span>
+Console: colour dummy device 80x30
+Calibrating delay loop... <span class="m">2459</span>.23 BogoMIPS <span class="o">(</span><span class="nv">lpj</span><span class="o">=</span><span class="m">12296192</span><span class="o">)</span>
+pid_max: default: <span class="m">32768</span> minimum: <span class="m">301</span>
+Mount-cache <span class="nb">hash</span> table entries: <span class="m">1024</span> <span class="o">(</span>order: <span class="m">0</span>, <span class="m">4096</span> bytes<span class="o">)</span>
+Mountpoint-cache <span class="nb">hash</span> table entries: <span class="m">1024</span> <span class="o">(</span>order: <span class="m">0</span>, <span class="m">4096</span> bytes<span class="o">)</span>
+CPU: Testing write buffer coherency: ok
+CPU0: thread -1, cpu <span class="m">0</span>, socket <span class="m">0</span>, mpidr <span class="m">80000000</span>
+Setting up static identity map <span class="k">for</span> 0x100000 - 0x100058
+CPU1: thread -1, cpu <span class="m">1</span>, socket <span class="m">0</span>, mpidr <span class="m">80000001</span>
+Brought up <span class="m">2</span> CPUs
+SMP: Total of <span class="m">2</span> processors activated <span class="o">(</span><span class="m">4911</span>.92 BogoMIPS<span class="o">)</span>.
+CPU: WARNING: CPU<span class="o">(</span>s<span class="o">)</span> started in wrong/inconsistent modes <span class="o">(</span>primary CPU mode 0x13<span class="o">)</span>
+CPU: This may indicate a broken bootloader or firmware.
+devtmpfs: initialized
+VFP support v0.3: implementor <span class="m">41</span> architecture <span class="m">3</span> part <span class="m">30</span> variant <span class="m">9</span> rev <span class="m">0</span>
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: <span class="m">19112604462750000</span> ns
+pinctrl core: initialized pinctrl subsystem
+NET: Registered protocol family <span class="m">16</span>
+DMA: preallocated <span class="m">256</span> KiB pool <span class="k">for</span> atomic coherent allocations
+cpuidle: using governor menu
+hw-breakpoint: debug architecture 0x4 unsupported.
+zynq-ocm f800c000.ocmc: ZYNQ OCM pool: <span class="m">256</span> KiB @ 0xe0840000
+zynq-pinctrl <span class="m">700</span>.pinctrl: zynq pinctrl initialized
+vgaarb: loaded
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+media: Linux media interface: v0.10
+Linux video capture interface: v2.00
+pps_core: LinuxPPS API ver. <span class="m">1</span> registered
+pps_core: Software ver. <span class="m">5</span>.3.6 - Copyright <span class="m">2005</span>-2007 Rodolfo Giometti &lt;giometti@linux.it&gt;
+PTP clock support registered
+EDAC MC: Ver: <span class="m">3</span>.0.0
+FPGA manager framework
+fpga-region fpga-full: FPGA Region probed
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource ttc_clocksource
+NET: Registered protocol family <span class="m">2</span>
+TCP established <span class="nb">hash</span> table entries: <span class="m">4096</span> <span class="o">(</span>order: <span class="m">2</span>, <span class="m">16384</span> bytes<span class="o">)</span>
+TCP <span class="nb">bind</span> <span class="nb">hash</span> table entries: <span class="m">4096</span> <span class="o">(</span>order: <span class="m">3</span>, <span class="m">32768</span> bytes<span class="o">)</span>
+TCP: Hash tables configured <span class="o">(</span>established <span class="m">4096</span> <span class="nb">bind</span> <span class="m">4096</span><span class="o">)</span>
+UDP <span class="nb">hash</span> table entries: <span class="m">256</span> <span class="o">(</span>order: <span class="m">1</span>, <span class="m">8192</span> bytes<span class="o">)</span>
+UDP-Lite <span class="nb">hash</span> table entries: <span class="m">256</span> <span class="o">(</span>order: <span class="m">1</span>, <span class="m">8192</span> bytes<span class="o">)</span>
+NET: Registered protocol family <span class="m">1</span>
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, <span class="m">1</span> counters available
+futex <span class="nb">hash</span> table entries: <span class="m">512</span> <span class="o">(</span>order: <span class="m">3</span>, <span class="m">32768</span> bytes<span class="o">)</span>
+workingset: <span class="nv">timestamp_bits</span><span class="o">=</span><span class="m">30</span> <span class="nv">max_order</span><span class="o">=</span><span class="m">17</span> <span class="nv">bucket_order</span><span class="o">=</span><span class="m">0</span>
+jffs2: version <span class="m">2</span>.2. <span class="o">(</span>NAND<span class="o">)</span> <span class="o">(</span>SUMMARY<span class="o">)</span>  © <span class="m">2001</span>-2006 Red Hat, Inc.
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered <span class="o">(</span>default<span class="o">)</span>
+dma-pl330 f8003000.dmac: Loaded driver <span class="k">for</span> PL330 DMAC-241330
+dma-pl330 f8003000.dmac:  DBUFF-256x8bytes Num_Chans-8 Num_Peri-4 Num_Events-16
+xilinx-vdma <span class="m">43000000</span>.dma: Xilinx AXI VDMA Engine Driver Probed!!
+e0001000.serial: ttyPS0 at MMIO 0xe0001000 <span class="o">(</span><span class="nv">irq</span> <span class="o">=</span> <span class="m">26</span>, <span class="nv">base_baud</span> <span class="o">=</span> <span class="m">1488095</span><span class="o">)</span> is a xuartps
+console <span class="o">[</span>ttyPS0<span class="o">]</span> enabled
+console <span class="o">[</span>ttyPS0<span class="o">]</span> enabled
+bootconsole <span class="o">[</span>earlycon0<span class="o">]</span> disabled
+bootconsole <span class="o">[</span>earlycon0<span class="o">]</span> disabled
+xdevcfg f8007000.devcfg: ioremap 0xf8007000 to e0828000
+<span class="o">[</span>drm<span class="o">]</span> Initialized
+<span class="o">[</span>drm<span class="o">]</span> load<span class="o">()</span> is defered <span class="p">&amp;</span> will be called again
+brd: module loaded
+loop: module loaded
+m25p80 spi0.0: m25p80 <span class="o">(</span><span class="m">1024</span> Kbytes<span class="o">)</span>
+<span class="m">4</span> ofpart partitions found on MTD device spi0.0
+Creating <span class="m">4</span> MTD partitions on <span class="s2">&quot;spi0.0&quot;</span>:
+0x000000000000-0x000000500000 : <span class="s2">&quot;boot&quot;</span>
+mtd: partition <span class="s2">&quot;boot&quot;</span> extends beyond the end of device <span class="s2">&quot;spi0.0&quot;</span> -- size truncated to 0x100000
+0x000000500000-0x000000520000 : <span class="s2">&quot;bootenv&quot;</span>
+mtd: partition <span class="s2">&quot;bootenv&quot;</span> is out of reach -- disabled
+0x000000520000-0x000000fa0000 : <span class="s2">&quot;kernel&quot;</span>
+mtd: partition <span class="s2">&quot;kernel&quot;</span> is out of reach -- disabled
+0x000000fa0000-0x000000100000 : <span class="s2">&quot;spare&quot;</span>
+mtd: partition <span class="s2">&quot;spare&quot;</span> is out of reach -- disabled
+libphy: Fixed MDIO Bus: probed
+CAN device driver interface
+libphy: MACB_mii_bus: probed
+macb e000b000.ethernet eth0: Cadence GEM rev 0x00020118 at 0xe000b000 irq <span class="m">28</span> <span class="o">(</span><span class="m">52</span>:54:00:12:34:56<span class="o">)</span>
+Marvell 88E1149R e000b000.etherne:01: attached PHY driver <span class="o">[</span>Marvell 88E1149R<span class="o">]</span> <span class="o">(</span>mii_bus:phy_addr<span class="o">=</span>e000b000.etherne:01, <span class="nv">irq</span><span class="o">=</span>-1<span class="o">)</span>
+e1000e: Intel<span class="o">(</span>R<span class="o">)</span> PRO/1000 Network Driver - <span class="m">3</span>.2.6-k
+e1000e: Copyright<span class="o">(</span>c<span class="o">)</span> <span class="m">1999</span> - <span class="m">2015</span> Intel Corporation.
+ehci_hcd: USB <span class="m">2</span>.0 <span class="s1">&#39;Enhanced&#39;</span> Host Controller <span class="o">(</span>EHCI<span class="o">)</span> Driver
+ehci-pci: EHCI PCI platform driver
+usbcore: registered new interface driver usb-storage
+e0002000.usb supply vbus not found, using dummy regulator
+ULPI transceiver vendor/product ID 0x0000/0x0000
+ULPI integrity check: failed!ci_hdrc ci_hdrc.0: unable to init phy: -19
+mousedev: PS/2 mouse device common <span class="k">for</span> all mice
+i2c /dev entries driver
+cdns-i2c e0004000.i2c: <span class="m">400</span> kHz mmio e0004000 irq <span class="m">22</span>
+cdns-i2c e0004000.i2c: timeout waiting on completion
+cdns-i2c e0005000.i2c: <span class="m">400</span> kHz mmio e0005000 irq <span class="m">23</span>
+uvcvideo: Unable to create debugfs directory
+usbcore: registered new interface driver uvcvideo
+USB Video Class driver <span class="o">(</span><span class="m">1</span>.1.1<span class="o">)</span>
+cdns-wdt f8005000.watchdog: Xilinx Watchdog Timer at e08ec000 with timeout 10s
+EDAC MC: ECC not enabled
+Xilinx Zynq CpuIdle Driver started
+sdhci: Secure Digital Host Controller Interface driver
+sdhci: Copyright<span class="o">(</span>c<span class="o">)</span> Pierre Ossman
+sdhci-pltfm: SDHCI platform and OF driver helper
+mmc0: SDHCI controller on e0100000.sdhci <span class="o">[</span>e0100000.sdhci<span class="o">]</span> using ADMA <span class="m">64</span>-bit
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered protocol family <span class="m">10</span>
+sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+NET: Registered protocol family <span class="m">17</span>
+can: controller area network core <span class="o">(</span>rev <span class="m">20120528</span> abi <span class="m">9</span><span class="o">)</span>
+NET: Registered protocol family <span class="m">29</span>
+can: raw protocol <span class="o">(</span>rev <span class="m">20120528</span><span class="o">)</span>
+can: broadcast manager protocol <span class="o">(</span>rev <span class="m">20161123</span> t<span class="o">)</span>
+can: netlink gateway <span class="o">(</span>rev <span class="m">20130117</span><span class="o">)</span> <span class="nv">max_hops</span><span class="o">=</span><span class="m">1</span>
+Registering SWP/SWPB emulation handler
+<span class="o">[</span>drm<span class="o">]</span> No max horizontal width in DT, using default <span class="m">1920</span>
+<span class="o">[</span>drm<span class="o">]</span> No max vertical height in DT, using default <span class="m">1080</span>
+OF: graph: no port node found in /amba_pl/xilinx_drm
+<span class="o">[</span>drm<span class="o">]</span> Supports vblank timestamp caching Rev <span class="m">2</span> <span class="o">(</span><span class="m">21</span>.10.2013<span class="o">)</span>.
+<span class="o">[</span>drm<span class="o">]</span> No driver support <span class="k">for</span> vblank timestamp query.
+xilinx-drm amba_pl:xilinx_drm: No connectors reported connected with modes
+<span class="o">[</span>drm<span class="o">]</span> Cannot find any crtc or sizes - going 1024x768
+Console: switching to colour frame buffer device 128x48
+xilinx-drm amba_pl:xilinx_drm: fb0:  frame buffer device
+<span class="o">[</span>drm<span class="o">]</span> Initialized xilinx_drm <span class="m">1</span>.0.0 <span class="m">20130509</span> on minor <span class="m">0</span>
+cdns-i2c e0004000.i2c: timeout waiting on completion
+ssm2602 <span class="m">0</span>-001a: Failed to issue reset: -110
+ssm2602 <span class="m">0</span>-001a: ASoC: failed to probe component -110
+asoc-simple-card amba_pl:sound: ASoC: failed to instantiate card -110
+asoc-simple-card: probe of amba_pl:sound failed with error -110
+hctosys: unable to open rtc device <span class="o">(</span>rtc0<span class="o">)</span>
+of_cfs_init
+of_cfs_init: OK
+ALSA device list:
+  No soundcards found.
+Warning: unable to open an initial console.
+Freeing unused kernel memory: 44032K <span class="o">(</span>c0900000 - c3400000<span class="o">)</span>    
+udevd<span class="o">[</span><span class="m">776</span><span class="o">]</span>: starting version <span class="m">3</span>.2
+random: udevd: uninitialized urandom <span class="nb">read</span> <span class="o">(</span><span class="m">16</span> bytes <span class="nb">read</span><span class="o">)</span>
+random: udevd: uninitialized urandom <span class="nb">read</span> <span class="o">(</span><span class="m">16</span> bytes <span class="nb">read</span><span class="o">)</span>
+random: udevd: uninitialized urandom <span class="nb">read</span> <span class="o">(</span><span class="m">16</span> bytes <span class="nb">read</span><span class="o">)</span>
+udevd<span class="o">[</span><span class="m">777</span><span class="o">]</span>: starting eudev-3.2
+random: udevd: uninitialized urandom <span class="nb">read</span> <span class="o">(</span><span class="m">16</span> bytes <span class="nb">read</span><span class="o">)</span>
+random: dd: uninitialized urandom <span class="nb">read</span> <span class="o">(</span><span class="m">512</span> bytes <span class="nb">read</span><span class="o">)</span>
+IPv6: ADDRCONF<span class="o">(</span>NETDEV_UP<span class="o">)</span>: eth0: link is not ready
+macb e000b000.ethernet eth0: link up <span class="o">(</span><span class="m">100</span>/Full<span class="o">)</span>
+IPv6: ADDRCONF<span class="o">(</span>NETDEV_CHANGE<span class="o">)</span>: eth0: link becomes ready
+random: dropbearkey: uninitialized urandom <span class="nb">read</span> <span class="o">(</span><span class="m">32</span> bytes <span class="nb">read</span><span class="o">)</span>
+random: dropbearkey: uninitialized urandom <span class="nb">read</span> <span class="o">(</span><span class="m">32</span> bytes <span class="nb">read</span><span class="o">)</span>
+random: dropbearkey: uninitialized urandom <span class="nb">read</span> <span class="o">(</span><span class="m">32</span> bytes <span class="nb">read</span><span class="o">)</span>
+random: dropbear: uninitialized urandom <span class="nb">read</span> <span class="o">(</span><span class="m">32</span> bytes <span class="nb">read</span><span class="o">)</span>
+random: tcf-agent: uninitialized urandom <span class="nb">read</span> <span class="o">(</span><span class="m">16</span> bytes <span class="nb">read</span><span class="o">)</span>
+/bin/autologin: line <span class="m">1</span>: -e: <span class="nb">command</span> not found
+root@Zybo:~#
+</code></pre></div>
+
+</details>
+<h3 id="package-the-project">Package the project</h3>
+<div class="highlight"><pre><span></span><code>petalinux-package --boot --force --fsbl images/linux/zynq_fsbl.elf <span class="se">\</span>
+  --fpga images/linux/system_wrapper.bit --u-boot
+</code></pre></div>
+
+<h3 id="boot-on-zybo-board">Boot on Zybo board</h3>
+<p><mark>TODO</mark></p>
+<h3 id="other-resources">Other resources</h3>
+<ul>
+<li><a href="https://www.instructables.com/Getting-Started-With-PetaLinux/">https://www.instructables.com/Getting-Started-With-PetaLinux/</a></li>
+<li><a href="https://www.youtube.com/watch?v=iDY5i1td4Wg">https://www.youtube.com/watch?v=iDY5i1td4Wg</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+
+        <!-- Link to previous page -->
+        
+          <a href="../5x5-led-matrix/"
+              title="5x5 LED Matrix"
+              class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+              rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back
+                    md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch
+                  md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                5x5 LED Matrix
+              </span>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          <a href="../../3d-printing/overview/"
+              title="Overview"
+              class="md-flex md-footer-nav__link md-footer-nav__link--next"
+              rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch
+                  md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Overview
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward
+                    md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+          - Built on 2021-04-24 18:33:19.804062+00:00
+      </div>
+
+      <!-- Social links -->
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
