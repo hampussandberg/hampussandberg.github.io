@@ -661,8 +661,57 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#prepare-sd-card" class="md-nav__link">
+    Prepare SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount-the-sd-card" class="md-nav__link">
+    Mount the SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-sd-rootfs" class="md-nav__link">
+    Configure SD rootfs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-files-to-sd-card" class="md-nav__link">
+    Copy files to SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpack-filesystem-on-sd-card" class="md-nav__link">
+    Unpack filesystem on SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unmount-sd-card" class="md-nav__link">
+    Unmount SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#boot-on-zybo-board" class="md-nav__link">
     Boot on Zybo board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linaro-ubuntu-desktop" class="md-nav__link">
+    Linaro Ubuntu Desktop
   </a>
   
 </li>
@@ -977,8 +1026,57 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#prepare-sd-card" class="md-nav__link">
+    Prepare SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount-the-sd-card" class="md-nav__link">
+    Mount the SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-sd-rootfs" class="md-nav__link">
+    Configure SD rootfs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-files-to-sd-card" class="md-nav__link">
+    Copy files to SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpack-filesystem-on-sd-card" class="md-nav__link">
+    Unpack filesystem on SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unmount-sd-card" class="md-nav__link">
+    Unmount SD card
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#boot-on-zybo-board" class="md-nav__link">
     Boot on Zybo board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linaro-ubuntu-desktop" class="md-nav__link">
+    Linaro Ubuntu Desktop
   </a>
   
 </li>
@@ -1026,6 +1124,9 @@
 <li>Ethernet: <a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/478937213/MPSoC+PS+and+PL+Ethernet+Example+Projects">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/478937213/MPSoC+PS+and+PL+Ethernet+Example+Projects</a></li>
 <li>Ubuntu desktop: <a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/148668419/Zynq+UltraScale+MPSoC+Ubuntu+VCU+Gstreamer+-+Building+and+Running+Ubuntu+Desktop+from+Sources">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/148668419/Zynq+UltraScale+MPSoC+Ubuntu+VCU+Gstreamer+-+Building+and+Running+Ubuntu+Desktop+from+Sources</a></li>
 <li>USB 3.0: <a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/968785932/USB+Device+for+PL+Data+Acquisition+on+Zynq+UltraScale+MPSoC">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/968785932/USB+Device+for+PL+Data+Acquisition+on+Zynq+UltraScale+MPSoC</a></li>
+<li>Docker: <a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/84508673/Docker+on+Zynq+Ultrascale+Xilinx+Yocto+Flow">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/84508673/Docker+on+Zynq+Ultrascale+Xilinx+Yocto+Flow</a></li>
+<li>Python in Yocto: <a href="https://hub.mender.io/t/how-to-work-with-python-applications-and-modules-in-yocto-project/1135">https://hub.mender.io/t/how-to-work-with-python-applications-and-modules-in-yocto-project/1135</a></li>
+<li>Run script at startup (PetaLinux): <a href="https://www.xilinx.com/support/answers/55998.html">https://www.xilinx.com/support/answers/55998.html</a></li>
 </ul>
 </li>
 </ul>
@@ -1114,7 +1215,7 @@ petalinux-build
 <div class="highlight"><pre><span></span><code>petalinux-boot --qemu --kernel
 </code></pre></div>
 Type <code>control-A x</code> to exit the emulator.</p>
-<details class="example"><summary>Example output</summary><div class="highlight"><pre><span></span><code>ubuntu@ubuntu:~/Downloads/Zybo$ petalinux-boot --qemu --kernel
+<details class="abstract"><summary>Example output</summary><div class="highlight"><pre><span></span><code>ubuntu@ubuntu:~/Downloads/Zybo$ petalinux-boot --qemu --kernel
 INFO: The image provided is a zImage
 INFO: TCP PORT is free 
 INFO: Starting arm QEMU
@@ -1334,11 +1435,588 @@ root@Zybo:~#
   --fpga images/linux/system_wrapper.bit --u-boot
 </code></pre></div>
 
+<h3 id="prepare-sd-card">Prepare SD card</h3>
+<p>Instructions from: <a href="https://reference.digilentinc.com/learn/programmable-logic/tutorials/zybo-zybot-guide/start">https://reference.digilentinc.com/learn/programmable-logic/tutorials/zybo-zybot-guide/start</a></p>
+<p>Identify the SD card in Ubuntu
+<div class="highlight"><pre><span></span><code>lsblk
+</code></pre></div></p>
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>ubuntu@ubuntu:~/Downloads/Zybo$ lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sr0     <span class="m">11</span>:0    <span class="m">1</span> 1024M  <span class="m">0</span> rom  
+sdd      <span class="m">8</span>:32   <span class="m">1</span> <span class="m">29</span>.7G  <span class="m">0</span> disk 
+├─sdd2   <span class="m">8</span>:34   <span class="m">1</span> <span class="m">29</span>.5G  <span class="m">0</span> part /media/ubuntu/UNTITLED
+└─sdd1   <span class="m">8</span>:33   <span class="m">1</span>  200M  <span class="m">0</span> part 
+sda      <span class="m">8</span>:0    <span class="m">0</span>   64G  <span class="m">0</span> disk 
+├─sda2   <span class="m">8</span>:2    <span class="m">0</span>    1K  <span class="m">0</span> part 
+├─sda5   <span class="m">8</span>:5    <span class="m">0</span>    2G  <span class="m">0</span> part <span class="o">[</span>SWAP<span class="o">]</span>
+└─sda1   <span class="m">8</span>:1    <span class="m">0</span>   62G  <span class="m">0</span> part /
+sr1     <span class="m">11</span>:1    <span class="m">1</span> 1024M  <span class="m">0</span> rom  
+</code></pre></div>
+
+</details>
+<p>SD card is at '/dev/sdd' in this example.</p>
+<p>The first thing we need to do is to unmount the SD card:
+<div class="highlight"><pre><span></span><code>umount /media/ubuntu/UNTITLED
+</code></pre></div></p>
+<p>Open fdisk with the SD card selected
+<div class="highlight"><pre><span></span><code>sudo fdisk /dev/sdd
+</code></pre></div></p>
+<p>Delete current partitions, run twice and accept defaults:
+<div class="highlight"><pre><span></span><code>d
+&lt;ENTER&gt;
+d
+</code></pre></div></p>
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: d
+Partition number <span class="o">(</span><span class="m">1</span>,2, default <span class="m">2</span><span class="o">)</span>: 
+
+Partition <span class="m">2</span> has been deleted.
+
+Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: d
+Selected partition <span class="m">1</span>
+Partition <span class="m">1</span> has been deleted.
+</code></pre></div>
+
+</details>
+<p>Write partition 1 (BOOT):
+<div class="highlight"><pre><span></span><code>n
+&lt;ENTER&gt; <span class="c1"># (partition number 1)</span>
+&lt;ENTER&gt; <span class="c1"># (first sector default)</span>
++1G <span class="c1"># (1 GB for this partition)</span>
+</code></pre></div></p>
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
+Partition number <span class="o">(</span><span class="m">1</span>-128, default <span class="m">1</span><span class="o">)</span>: 
+First sector <span class="o">(</span><span class="m">34</span>-62333918, default <span class="m">2048</span><span class="o">)</span>: 
+Last sector, +sectors or +size<span class="o">{</span>K,M,G,T,P<span class="o">}</span> <span class="o">(</span><span class="m">2048</span>-62333918, default <span class="m">62333918</span><span class="o">)</span>: +1G
+
+Created a new partition <span class="m">1</span> of <span class="nb">type</span> <span class="s1">&#39;Linux filesystem&#39;</span> and of size <span class="m">1</span> GiB.
+</code></pre></div>
+
+</details>
+<p>Write partition 2 (rootfs):
+<div class="highlight"><pre><span></span><code>n
+&lt;ENTER&gt; <span class="c1"># (partition number 2)</span>
+&lt;ENTER&gt; <span class="c1"># (first sector default)</span>
+&lt;ENTER&gt; <span class="c1"># (use the remainder of the card for this partition)</span>
+</code></pre></div></p>
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: n
+Partition number <span class="o">(</span><span class="m">2</span>-128, default <span class="m">2</span><span class="o">)</span>: 
+First sector <span class="o">(</span><span class="m">2099200</span>-62333918, default <span class="m">2099200</span><span class="o">)</span>: 
+Last sector, +sectors or +size<span class="o">{</span>K,M,G,T,P<span class="o">}</span> <span class="o">(</span><span class="m">2099200</span>-62333918, default <span class="m">62333918</span><span class="o">)</span>: 
+
+Created a new partition <span class="m">2</span> of <span class="nb">type</span> <span class="s1">&#39;Linux filesystem&#39;</span> and of size <span class="m">28</span>.7 GiB.
+</code></pre></div>
+
+</details>
+<p>Write to the SD card:
+<div class="highlight"><pre><span></span><code>w
+</code></pre></div></p>
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>Command <span class="o">(</span>m <span class="k">for</span> <span class="nb">help</span><span class="o">)</span>: w
+The partition table has been altered.
+Calling ioctl<span class="o">()</span> to re-read partition table.
+Syncing disks.
+</code></pre></div>
+
+</details>
+<p>Verify the new partitioning:
+<div class="highlight"><pre><span></span><code>lsblk
+</code></pre></div></p>
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>ubuntu@ubuntu:~/Downloads/Zybo$ lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sr0     <span class="m">11</span>:0    <span class="m">1</span> 1024M  <span class="m">0</span> rom  
+sdd      <span class="m">8</span>:32   <span class="m">1</span> <span class="m">29</span>.7G  <span class="m">0</span> disk 
+├─sdd2   <span class="m">8</span>:34   <span class="m">1</span> <span class="m">28</span>.7G  <span class="m">0</span> part 
+└─sdd1   <span class="m">8</span>:33   <span class="m">1</span>    1G  <span class="m">0</span> part 
+sda      <span class="m">8</span>:0    <span class="m">0</span>   64G  <span class="m">0</span> disk 
+├─sda2   <span class="m">8</span>:2    <span class="m">0</span>    1K  <span class="m">0</span> part 
+├─sda5   <span class="m">8</span>:5    <span class="m">0</span>    2G  <span class="m">0</span> part <span class="o">[</span>SWAP<span class="o">]</span>
+└─sda1   <span class="m">8</span>:1    <span class="m">0</span>   62G  <span class="m">0</span> part /
+sr1     <span class="m">11</span>:1    <span class="m">1</span> 1024M  <span class="m">0</span> rom 
+</code></pre></div>
+
+</details>
+<p>Create File Allocation Table on partition 1:
+<div class="highlight"><pre><span></span><code>sudo mkfs -t vfat -n BOOT /dev/sdd1
+</code></pre></div></p>
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>ubuntu@ubuntu:~/Downloads/Zybo$ sudo mkfs -t vfat -n BOOT /dev/sdd1
+mkfs.fat <span class="m">3</span>.0.28 <span class="o">(</span><span class="m">2015</span>-05-16<span class="o">)</span>
+</code></pre></div>
+
+</details>
+<p>Create ext4 file system on partition 2:
+<div class="highlight"><pre><span></span><code>sudo mkfs -t ext4 -L rootfs /dev/sdd2
+</code></pre></div></p>
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>ubuntu@ubuntu:~/Downloads/Zybo$ sudo mkfs -t ext4 -L rootfs /dev/sdd2
+mke2fs <span class="m">1</span>.42.13 <span class="o">(</span><span class="m">17</span>-May-2015<span class="o">)</span>
+Creating filesystem with <span class="m">7529339</span> 4k blocks and <span class="m">1884160</span> inodes
+Filesystem UUID: 49004b23-2a3d-4ae4-a9ec-c51f0a2309c2
+Superblock backups stored on blocks: 
+  <span class="m">32768</span>, <span class="m">98304</span>, <span class="m">163840</span>, <span class="m">229376</span>, <span class="m">294912</span>, <span class="m">819200</span>, <span class="m">884736</span>, <span class="m">1605632</span>, <span class="m">2654208</span>, 
+  <span class="m">4096000</span>
+
+Allocating group tables: <span class="k">done</span>                            
+Writing inode tables: <span class="k">done</span>                            
+Creating journal <span class="o">(</span><span class="m">32768</span> blocks<span class="o">)</span>: <span class="k">done</span>
+Writing superblocks and filesystem accounting information: <span class="k">done</span>  
+</code></pre></div>
+
+</details>
+<h3 id="mount-the-sd-card">Mount the SD card</h3>
+<div class="highlight"><pre><span></span><code>sudo mkdir -p /media/ubuntu/BOOT
+sudo mkdir -p /media/ubuntu/rootfs
+sudo mount /dev/sdd1 /media/ubuntu/BOOT
+sudo mount /dev/sdd2 /media/ubuntu/rootfs
+lsblk
+</code></pre></div>
+
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>ubuntu@ubuntu:~/Downloads/Zybo$ sudo mkdir -p /media/ubuntu/BOOT
+ubuntu@ubuntu:~/Downloads/Zybo$ sudo mkdir -p /media/ubuntu/rootfs
+ubuntu@ubuntu:~/Downloads/Zybo$ sudo mount /dev/sdd1 /media/ubuntu/BOOT
+ubuntu@ubuntu:~/Downloads/Zybo$ sudo mount /dev/sdd2 /media/ubuntu/rootfs
+ubuntu@ubuntu:~/Downloads/Zybo$ lsblk
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sr0     <span class="m">11</span>:0    <span class="m">1</span> 1024M  <span class="m">0</span> rom  
+sdd      <span class="m">8</span>:32   <span class="m">1</span> <span class="m">29</span>.7G  <span class="m">0</span> disk 
+├─sdd2   <span class="m">8</span>:34   <span class="m">1</span> <span class="m">28</span>.7G  <span class="m">0</span> part /media/ubuntu/rootfs
+└─sdd1   <span class="m">8</span>:33   <span class="m">1</span>    1G  <span class="m">0</span> part /media/ubuntu/BOOT
+sda      <span class="m">8</span>:0    <span class="m">0</span>   64G  <span class="m">0</span> disk 
+├─sda2   <span class="m">8</span>:2    <span class="m">0</span>    1K  <span class="m">0</span> part 
+├─sda5   <span class="m">8</span>:5    <span class="m">0</span>    2G  <span class="m">0</span> part <span class="o">[</span>SWAP<span class="o">]</span>
+└─sda1   <span class="m">8</span>:1    <span class="m">0</span>   62G  <span class="m">0</span> part /
+sr1     <span class="m">11</span>:1    <span class="m">1</span> 1024M  <span class="m">0</span> rom 
+</code></pre></div>
+
+</details>
+<h3 id="configure-sd-rootfs">Configure SD rootfs</h3>
+<p>From: <a href="https://github.com/Digilent/Petalinux-Zybo/blob/v2017.4-1/README.md#configure-sd-rootfs">https://github.com/Digilent/Petalinux-Zybo/blob/v2017.4-1/README.md#configure-sd-rootfs</a>
+<div class="highlight"><pre><span></span><code>petalinux-config
+-&gt; Image Packaging Configuration -&gt; Root filesystem <span class="nb">type</span> -&gt; SD card
+Save
+Exit
+</code></pre></div></p>
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>ubuntu@ubuntu:~/Downloads/Zybo$ petalinux-config
+<span class="o">[</span>INFO<span class="o">]</span> generating Kconfig <span class="k">for</span> project
+
+<span class="o">[</span>INFO<span class="o">]</span> menuconfig project
+/home/ubuntu/Downloads/Zybo/build/misc/config/Kconfig.syshw:30:warning: defaults <span class="k">for</span> choice values not supported
+/home/ubuntu/Downloads/Zybo/build/misc/config/Kconfig:568:warning: config symbol defined without <span class="nb">type</span>
+
+
+*** End of the configuration.
+*** Execute <span class="s1">&#39;make&#39;</span> to start the build or try <span class="s1">&#39;make help&#39;</span>.
+
+<span class="o">[</span>INFO<span class="o">]</span> sourcing bitbake
+<span class="o">[</span>INFO<span class="o">]</span> generating plnxtool conf
+<span class="o">[</span>INFO<span class="o">]</span> generating meta-plnx-generated layer
+~/Downloads/Zybo/build/misc/plnx-generated ~/Downloads/Zybo
+~/Downloads/Zybo
+<span class="o">[</span>INFO<span class="o">]</span> generating machine configuration
+<span class="o">[</span>INFO<span class="o">]</span> generating bbappends <span class="k">for</span> project . This may take <span class="nb">time</span> ! 
+~/Downloads/Zybo/build/misc/plnx-generated ~/Downloads/Zybo
+~/Downloads/Zybo
+<span class="o">[</span>INFO<span class="o">]</span> generating u-boot configuration files
+
+<span class="o">[</span>INFO<span class="o">]</span> generating kernel configuration files
+<span class="o">[</span>INFO<span class="o">]</span> generating kconfig <span class="k">for</span> Rootfs
+Generate rootfs kconfig
+<span class="o">[</span>INFO<span class="o">]</span> oldconfig rootfs
+<span class="o">[</span>INFO<span class="o">]</span> generating petalinux-user-image.bb
+<span class="o">[</span>INFO<span class="o">]</span> successfully configured project
+webtalk failed:PetaLinux statistics:extra lines detected:notsent_nofile!
+webtalk failed:Failed to get PetaLinux usage statistics!
+</code></pre></div>
+
+</details>
+<p>Edit device tree:
+<div class="highlight"><pre><span></span><code>project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi
+<span class="c1"># Find line with &quot;bootargs&quot; that says:</span>
+<span class="nv">bootargs</span> <span class="o">=</span> <span class="s2">&quot;console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio&quot;</span><span class="p">;</span>
+<span class="c1"># Replace with the following:</span>
+<span class="nv">bootargs</span> <span class="o">=</span> <span class="s2">&quot;console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio root=/dev/mmcblk0p2 rw rootwait&quot;</span><span class="p">;</span>
+<span class="c1"># Save and close</span>
+</code></pre></div></p>
+<p>Build petalinux again
+<div class="highlight"><pre><span></span><code>petalinux-build
+</code></pre></div></p>
+<details class="abstract"><summary>Output</summary><div class="highlight"><pre><span></span><code>ubuntu@ubuntu:~/Downloads/Zybo$ petalinux-build
+<span class="o">[</span>INFO<span class="o">]</span> building project
+<span class="o">[</span>INFO<span class="o">]</span> sourcing bitbake
+INFO: bitbake petalinux-user-image
+Parsing recipes: <span class="m">100</span>% <span class="p">|</span><span class="c1">###################################################################################| Time: 0:01:54</span>
+Parsing of <span class="m">2473</span> .bb files <span class="nb">complete</span> <span class="o">(</span><span class="m">0</span> cached, <span class="m">2473</span> parsed<span class="o">)</span>. <span class="m">3266</span> targets, <span class="m">226</span> skipped, <span class="m">0</span> masked, <span class="m">0</span> errors.
+NOTE: Resolving any missing task queue dependencies
+Initialising tasks: <span class="m">100</span>% <span class="p">|</span><span class="c1">################################################################################| Time: 0:00:09</span>
+Checking sstate mirror object availability: <span class="m">100</span>% <span class="p">|</span><span class="c1">########################################################| Time: 0:00:17</span>
+NOTE: Executing SetScene Tasks
+NOTE: Executing RunQueue Tasks
+fsbl-2017.4+gitAUTOINC+77448ae629-r0 do_compile: NOTE: fsbl: compiling from external <span class="nb">source</span> tree /opt/pkg/petalinux/tools/hsm/data/embeddedsw
+NOTE: Tasks Summary: Attempted <span class="m">2674</span> tasks of which <span class="m">2595</span> didn<span class="err">&#39;</span>t need to be rerun and all succeeded.
+INFO: Copying Images from deploy to images
+NOTE: Successfully copied built images to tftp dir:  /var/lib/tftpboot
+<span class="o">[</span>INFO<span class="o">]</span> successfully built project
+webtalk failed:PetaLinux statistics:extra lines detected:notsent_nofile!
+webtalk failed:Failed to get PetaLinux usage statistics!
+</code></pre></div>
+
+</details>
+<h3 id="copy-files-to-sd-card">Copy files to SD card</h3>
+<div class="highlight"><pre><span></span><code>sudo cp images/linux/BOOT.BIN /media/ubuntu/BOOT
+sudo cp images/linux/image.ub /media/ubuntu/BOOT
+
+sudo cp images/linux/rootfs.cpio /media/ubuntu/rootfs
+</code></pre></div>
+
+<h3 id="unpack-filesystem-on-sd-card">Unpack filesystem on SD card</h3>
+<p>From: <a href="https://reference.digilentinc.com/reference/software/petalinux#boot_options">https://reference.digilentinc.com/reference/software/petalinux#boot_options</a>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /media/ubuntu/rootfs
+sudo pax -rvf rootfs.cpio
+<span class="nb">cd</span> ~/Downloads/Zybo
+</code></pre></div></p>
+<h3 id="unmount-sd-card">Unmount SD card</h3>
+<div class="highlight"><pre><span></span><code>sudo umount /media/ubuntu/BOOT /media/ubuntu/rootfs
+</code></pre></div>
+
 <h3 id="boot-on-zybo-board">Boot on Zybo board</h3>
-<p><mark>TODO</mark></p>
+<ul>
+<li>Power off the board</li>
+<li>Insert SD card</li>
+<li>Move JP5 to SD position</li>
+<li>Insert micro USB cable to PROG/UART from host computer</li>
+<li>Power on the board</li>
+<li>Open a serial port on host computer with 115200/8/N/1 settings</li>
+<li>Reset by pressing  PS-SRST</li>
+</ul>
+<details class="success"><summary>Output</summary><div class="highlight"><pre><span></span><code>U-Boot <span class="m">2017</span>.01 <span class="o">(</span>Apr <span class="m">24</span> <span class="m">2021</span> - <span class="m">17</span>:52:44 +0200<span class="o">)</span>
+
+Model: Zynq Zybo Development Board
+Board: Xilinx Zynq
+I2C:   ready
+DRAM:  ECC disabled <span class="m">512</span> MiB
+MMC:   sdhci@e0100000: <span class="m">0</span> <span class="o">(</span>SD<span class="o">)</span>
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ZYNQ GEM: e000b000, phyaddr <span class="m">1</span>, interface rgmii-id
+
+Warning: ethernet@e000b000 using MAC address from ROM
+eth0: ethernet@e000b000
+U-BOOT <span class="k">for</span> Zybo
+ethernet@e000b000 Waiting <span class="k">for</span> PHY auto negotiation to complete......... TIMEOUT !
+Hit any key to stop autoboot:  <span class="m">4</span> ... <span class="m">3</span> ... <span class="m">2</span> ... <span class="m">1</span> ... <span class="m">0</span> 
+Device: sdhci@e0100000
+Manufacturer ID: <span class="m">74</span>
+OEM: 4a60
+Name: USDU1 
+Tran Speed: <span class="m">50000000</span>
+Rd Block Len: <span class="m">512</span>
+SD version <span class="m">3</span>.0
+High Capacity: Yes
+Capacity: <span class="m">29</span>.4 GiB
+Bus Width: <span class="m">4</span>-bit
+Erase Group Size: <span class="m">512</span> Bytes
+reading image.ub
+<span class="m">3838864</span> bytes <span class="nb">read</span> in <span class="m">332</span> ms <span class="o">(</span><span class="m">11</span> MiB/s<span class="o">)</span>
+<span class="c1">## Loading kernel from FIT Image at 10000000 ...</span>
+   Using <span class="s1">&#39;conf@2&#39;</span> configuration
+   Verifying Hash Integrity ... OK
+   Trying <span class="s1">&#39;kernel@0&#39;</span> kernel subimage
+     Description:  Linux Kernel
+     Type:         Kernel Image
+     Compression:  uncompressed
+     Data Start:   0x100000d4
+     Data Size:    <span class="m">3812944</span> <span class="nv">Bytes</span> <span class="o">=</span> <span class="m">3</span>.6 MiB
+     Architecture: ARM
+     OS:           Linux
+     Load Address: 0x00008000
+     Entry Point:  0x00008000
+     Hash algo:    sha1
+     Hash value:   863c170235c173204916a246127eef3e56e6d13d
+   Verifying Hash Integrity ... sha1+ OK
+<span class="c1">## Loading fdt from FIT Image at 10000000 ...</span>
+   Using <span class="s1">&#39;conf@2&#39;</span> configuration
+   Trying <span class="s1">&#39;fdt@0&#39;</span> fdt subimage
+     Description:  Flattened Device Tree blob
+     Type:         Flat Device Tree
+     Compression:  uncompressed
+     Data Start:   0x103a3018
+     Data Size:    <span class="m">24625</span> <span class="nv">Bytes</span> <span class="o">=</span> <span class="m">24</span> KiB
+     Architecture: ARM
+     Hash algo:    sha1
+     Hash value:   806f3e9f43f0ed59b183c25833618dfa50cffca0
+   Verifying Hash Integrity ... sha1+ OK
+   Booting using the fdt blob at 0x103a3018
+   Loading Kernel Image ... OK
+   Loading Device Tree to 07ff6000, end 07fff030 ... OK
+
+Starting kernel ...
+Uncompressing Linux... <span class="k">done</span>, booting the kernel.
+Booting Linux on physical CPU 0x0
+Linux version <span class="m">4</span>.9.0-xilinx-v2017.4 <span class="o">(</span>ubuntu@ubuntu<span class="o">)</span> <span class="o">(</span>gcc version <span class="m">6</span>.2.1 <span class="m">20161016</span> <span class="o">(</span>Linaro GCC <span class="m">6</span>.2-2016.11<span class="o">)</span> <span class="o">)</span> <span class="c1">#4 SMP PREEMPT Sun Apr 25 13:19:14 CEST 2021</span>
+CPU: ARMv7 Processor <span class="o">[</span>413fc090<span class="o">]</span> revision <span class="m">0</span> <span class="o">(</span>ARMv7<span class="o">)</span>, <span class="nv">cr</span><span class="o">=</span>18c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+OF: fdt:Machine model: Zynq Zybo Development Board
+bootconsole <span class="o">[</span>earlycon0<span class="o">]</span> enabled
+cma: Reserved <span class="m">64</span> MiB at 0x1c000000
+Memory policy: Data cache writealloc
+percpu: Embedded <span class="m">14</span> pages/cpu @dbbad000 s25932 r8192 d23220 u57344
+Built <span class="m">1</span> zonelists in Zone order, mobility grouping on.  Total pages: <span class="m">130048</span>
+Kernel <span class="nb">command</span> line: <span class="nv">console</span><span class="o">=</span>ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id<span class="o">=</span>generic-uio <span class="nv">root</span><span class="o">=</span>/dev/mmcblk0p2 rw rootwait
+PID <span class="nb">hash</span> table entries: <span class="m">2048</span> <span class="o">(</span>order: <span class="m">1</span>, <span class="m">8192</span> bytes<span class="o">)</span>
+Dentry cache <span class="nb">hash</span> table entries: <span class="m">65536</span> <span class="o">(</span>order: <span class="m">6</span>, <span class="m">262144</span> bytes<span class="o">)</span>
+Inode-cache <span class="nb">hash</span> table entries: <span class="m">32768</span> <span class="o">(</span>order: <span class="m">5</span>, <span class="m">131072</span> bytes<span class="o">)</span>
+Memory: 443744K/524288K available <span class="o">(</span>6144K kernel code, 208K rwdata, 1492K rodata, 1024K init, 231K bss, 15008K reserved, 65536K cma-reserved, 0K highmem<span class="o">)</span>
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   <span class="o">(</span>   <span class="m">4</span> kB<span class="o">)</span>
+    fixmap  : 0xffc00000 - 0xfff00000   <span class="o">(</span><span class="m">3072</span> kB<span class="o">)</span>
+    vmalloc : 0xe0800000 - 0xff800000   <span class="o">(</span> <span class="m">496</span> MB<span class="o">)</span>
+    lowmem  : 0xc0000000 - 0xe0000000   <span class="o">(</span> <span class="m">512</span> MB<span class="o">)</span>
+    pkmap   : 0xbfe00000 - 0xc0000000   <span class="o">(</span>   <span class="m">2</span> MB<span class="o">)</span>
+    modules : 0xbf000000 - 0xbfe00000   <span class="o">(</span>  <span class="m">14</span> MB<span class="o">)</span>
+      .text : 0xc0008000 - 0xc0700000   <span class="o">(</span><span class="m">7136</span> kB<span class="o">)</span>
+      .init : 0xc0900000 - 0xc0a00000   <span class="o">(</span><span class="m">1024</span> kB<span class="o">)</span>
+      .data : 0xc0a00000 - 0xc0a34380   <span class="o">(</span> <span class="m">209</span> kB<span class="o">)</span>
+       .bss : 0xc0a34380 - 0xc0a6e118   <span class="o">(</span> <span class="m">232</span> kB<span class="o">)</span>
+Preemptible hierarchical RCU implementation.
+.Build-time adjustment of leaf fanout to <span class="m">32</span>.
+.RCU restricting CPUs from <span class="nv">NR_CPUS</span><span class="o">=</span><span class="m">4</span> to <span class="nv">nr_cpu_ids</span><span class="o">=</span><span class="m">2</span>.
+RCU: Adjusting geometry <span class="k">for</span> <span class="nv">rcu_fanout_leaf</span><span class="o">=</span><span class="m">32</span>, <span class="nv">nr_cpu_ids</span><span class="o">=</span><span class="m">2</span>
+NR_IRQS:16 nr_irqs:16 <span class="m">16</span>
+efuse mapped to e0800000
+slcr mapped to e0802000
+L2C: platform modifies aux control register: 0x72360000 -&gt; 0x72760000
+L2C: DT/platform modifies aux control register: 0x72360000 -&gt; 0x72760000
+L2C-310 erratum <span class="m">769419</span> enabled
+L2C-310 enabling early BRESP <span class="k">for</span> Cortex-A9
+L2C-310 full line of zeros enabled <span class="k">for</span> Cortex-A9
+L2C-310 ID prefetch enabled, offset <span class="m">1</span> lines
+L2C-310 dynamic clock gating enabled, standby mode enabled
+L2C-310 cache controller enabled, <span class="m">8</span> ways, <span class="m">512</span> kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x76760001
+zynq_clock_init: clkc starts at e0802100
+Zynq clock init
+sched_clock: <span class="m">64</span> bits at 325MHz, resolution 3ns, wraps every 4398046511103ns
+clocksource: arm_global_timer: mask: 0xffffffffffffffff max_cycles: 0x4af477f6aa, max_idle_ns: <span class="m">440795207830</span> ns
+Switching to timer-based delay loop, resolution 3ns
+clocksource: ttc_clocksource: mask: 0xffff max_cycles: 0xffff, max_idle_ns: <span class="m">551318127</span> ns
+timer <span class="c1">#0 at e080a000, irq=17</span>
+Console: colour dummy device 80x30
+Calibrating delay loop <span class="o">(</span>skipped<span class="o">)</span>, value calculated using timer frequency.. <span class="m">650</span>.00 BogoMIPS <span class="o">(</span><span class="nv">lpj</span><span class="o">=</span><span class="m">3250000</span><span class="o">)</span>
+pid_max: default: <span class="m">32768</span> minimum: <span class="m">301</span>
+Mount-cache <span class="nb">hash</span> table entries: <span class="m">1024</span> <span class="o">(</span>order: <span class="m">0</span>, <span class="m">4096</span> bytes<span class="o">)</span>
+Mountpoint-cache <span class="nb">hash</span> table entries: <span class="m">1024</span> <span class="o">(</span>order: <span class="m">0</span>, <span class="m">4096</span> bytes<span class="o">)</span>
+CPU: Testing write buffer coherency: ok
+CPU0: thread -1, cpu <span class="m">0</span>, socket <span class="m">0</span>, mpidr <span class="m">80000000</span>
+Setting up static identity map <span class="k">for</span> 0x100000 - 0x100058
+CPU1: thread -1, cpu <span class="m">1</span>, socket <span class="m">0</span>, mpidr <span class="m">80000001</span>
+Brought up <span class="m">2</span> CPUs
+SMP: Total of <span class="m">2</span> processors activated <span class="o">(</span><span class="m">1300</span>.00 BogoMIPS<span class="o">)</span>.
+CPU: All CPU<span class="o">(</span>s<span class="o">)</span> started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor <span class="m">41</span> architecture <span class="m">3</span> part <span class="m">30</span> variant <span class="m">9</span> rev <span class="m">4</span>
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: <span class="m">19112604462750000</span> ns
+pinctrl core: initialized pinctrl subsystem
+NET: Registered protocol family <span class="m">16</span>
+DMA: preallocated <span class="m">256</span> KiB pool <span class="k">for</span> atomic coherent allocations
+cpuidle: using governor menu
+hw-breakpoint: found <span class="m">5</span> <span class="o">(</span>+1 reserved<span class="o">)</span> breakpoint and <span class="m">1</span> watchpoint registers.
+hw-breakpoint: maximum watchpoint size is <span class="m">4</span> bytes.
+zynq-ocm f800c000.ocmc: ZYNQ OCM pool: <span class="m">256</span> KiB @ 0xe0840000
+zynq-pinctrl <span class="m">700</span>.pinctrl: zynq pinctrl initialized
+vgaarb: loaded
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+media: Linux media interface: v0.10
+Linux video capture interface: v2.00
+pps_core: LinuxPPS API ver. <span class="m">1</span> registered
+pps_core: Software ver. <span class="m">5</span>.3.6 - Copyright <span class="m">2005</span>-2007 Rodolfo Giometti &lt;giometti@linux.it&gt;
+PTP clock support registered
+EDAC MC: Ver: <span class="m">3</span>.0.0
+FPGA manager framework
+fpga-region fpga-full: FPGA Region probed
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm_global_timer
+NET: Registered protocol family <span class="m">2</span>
+TCP established <span class="nb">hash</span> table entries: <span class="m">4096</span> <span class="o">(</span>order: <span class="m">2</span>, <span class="m">16384</span> bytes<span class="o">)</span>
+TCP <span class="nb">bind</span> <span class="nb">hash</span> table entries: <span class="m">4096</span> <span class="o">(</span>order: <span class="m">3</span>, <span class="m">32768</span> bytes<span class="o">)</span>
+TCP: Hash tables configured <span class="o">(</span>established <span class="m">4096</span> <span class="nb">bind</span> <span class="m">4096</span><span class="o">)</span>
+UDP <span class="nb">hash</span> table entries: <span class="m">256</span> <span class="o">(</span>order: <span class="m">1</span>, <span class="m">8192</span> bytes<span class="o">)</span>
+UDP-Lite <span class="nb">hash</span> table entries: <span class="m">256</span> <span class="o">(</span>order: <span class="m">1</span>, <span class="m">8192</span> bytes<span class="o">)</span>
+NET: Registered protocol family <span class="m">1</span>
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, <span class="m">7</span> counters available
+futex <span class="nb">hash</span> table entries: <span class="m">512</span> <span class="o">(</span>order: <span class="m">3</span>, <span class="m">32768</span> bytes<span class="o">)</span>
+workingset: <span class="nv">timestamp_bits</span><span class="o">=</span><span class="m">30</span> <span class="nv">max_order</span><span class="o">=</span><span class="m">17</span> <span class="nv">bucket_order</span><span class="o">=</span><span class="m">0</span>
+jffs2: version <span class="m">2</span>.2. <span class="o">(</span>NAND<span class="o">)</span> <span class="o">(</span>SUMMARY<span class="o">)</span>  ¬© <span class="m">2001</span>-2006 Red Hat, Inc.
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered <span class="o">(</span>default<span class="o">)</span>
+dma-pl330 f8003000.dmac: Loaded driver <span class="k">for</span> PL330 DMAC-241330
+dma-pl330 f8003000.dmac: .DBUFF-128x8bytes Num_Chans-8 Num_Peri-4 Num_Events-16
+xilinx-vdma <span class="m">43000000</span>.dma: Xilinx AXI VDMA Engine Driver Probed!!
+e0001000.serial: ttyPS0 at MMIO 0xe0001000 <span class="o">(</span><span class="nv">irq</span> <span class="o">=</span> <span class="m">27</span>, <span class="nv">base_baud</span> <span class="o">=</span> <span class="m">6250000</span><span class="o">)</span> is a xuartps
+¿console <span class="o">[</span>ttyPS0<span class="o">]</span> enabled
+console <span class="o">[</span>ttyPS0<span class="o">]</span> enabled
+bootconsole <span class="o">[</span>earlycon0<span class="o">]</span> disabled
+bootconsole <span class="o">[</span>earlycon0<span class="o">]</span> disabled
+xdevcfg f8007000.devcfg: ioremap 0xf8007000 to e0828000
+<span class="o">[</span>drm<span class="o">]</span> Initialized
+<span class="o">[</span>drm<span class="o">]</span> load<span class="o">()</span> is defered <span class="p">&amp;</span> will be called again
+brd: module loaded
+loop: module loaded
+m25p80 spi0.0: found s25fl128s, expected m25p80
+m25p80 spi0.0: s25fl128s <span class="o">(</span><span class="m">16384</span> Kbytes<span class="o">)</span>
+<span class="m">4</span> ofpart partitions found on MTD device spi0.0
+Creating <span class="m">4</span> MTD partitions on <span class="s2">&quot;spi0.0&quot;</span>:
+0x000000000000-0x000000500000 : <span class="s2">&quot;boot&quot;</span>
+0x000000500000-0x000000520000 : <span class="s2">&quot;bootenv&quot;</span>
+0x000000520000-0x000000fa0000 : <span class="s2">&quot;kernel&quot;</span>
+0x000000fa0000-0x000001000000 : <span class="s2">&quot;spare&quot;</span>
+libphy: Fixed MDIO Bus: probed
+CAN device driver interface
+libphy: MACB_mii_bus: probed
+macb e000b000.ethernet eth0: Cadence GEM rev 0x00020118 at 0xe000b000 irq <span class="m">29</span> <span class="o">(</span>d8:80:39:5c:17:ce<span class="o">)</span>
+RTL8211E Gigabit Ethernet e000b000.etherne:01: attached PHY driver <span class="o">[</span>RTL8211E Gigabit Ethernet<span class="o">]</span> <span class="o">(</span>mii_bus:phy_addr<span class="o">=</span>e000b000.etherne:01, <span class="nv">irq</span><span class="o">=</span>-1<span class="o">)</span>
+e1000e: Intel<span class="o">(</span>R<span class="o">)</span> PRO/1000 Network Driver - <span class="m">3</span>.2.6-k
+e1000e: Copyright<span class="o">(</span>c<span class="o">)</span> <span class="m">1999</span> - <span class="m">2015</span> Intel Corporation.
+ehci_hcd: USB <span class="m">2</span>.0 <span class="s1">&#39;Enhanced&#39;</span> Host Controller <span class="o">(</span>EHCI<span class="o">)</span> Driver
+ehci-pci: EHCI PCI platform driver
+usbcore: registered new interface driver usb-storage
+e0002000.usb supply vbus not found, using dummy regulator
+ULPI transceiver vendor/product ID 0x0424/0x0007
+Found SMSC USB3320 ULPI transceiver.
+ULPI integrity check: passed.
+ci_hdrc ci_hdrc.0: EHCI Host Controller
+ci_hdrc ci_hdrc.0: new USB bus registered, assigned bus number <span class="m">1</span>
+ci_hdrc ci_hdrc.0: USB <span class="m">2</span>.0 started, EHCI <span class="m">1</span>.00
+hub <span class="m">1</span>-0:1.0: USB hub found
+hub <span class="m">1</span>-0:1.0: <span class="m">1</span> port detected
+mousedev: PS/2 mouse device common <span class="k">for</span> all mice
+i2c /dev entries driver
+cdns-i2c e0004000.i2c: <span class="m">400</span> kHz mmio e0004000 irq <span class="m">23</span>
+at24 <span class="m">0</span>-0050: <span class="m">256</span> byte 24c02 EEPROM, writable, <span class="m">1</span> bytes/write
+cdns-i2c e0005000.i2c: <span class="m">400</span> kHz mmio e0005000 irq <span class="m">24</span>
+uvcvideo: Unable to create debugfs directory
+usbcore: registered new interface driver uvcvideo
+USB Video Class driver <span class="o">(</span><span class="m">1</span>.1.1<span class="o">)</span>
+cdns-wdt f8005000.watchdog: Xilinx Watchdog Timer at e08ec000 with timeout 10s
+EDAC MC: ECC not enabled
+Xilinx Zynq CpuIdle Driver started
+sdhci: Secure Digital Host Controller Interface driver
+sdhci: Copyright<span class="o">(</span>c<span class="o">)</span> Pierre Ossman
+sdhci-pltfm: SDHCI platform and OF driver helper
+mmc0: SDHCI controller on e0100000.sdhci <span class="o">[</span>e0100000.sdhci<span class="o">]</span> using ADMA
+ledtrig-cpu: registered to indicate activity on CPUs
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+NET: Registered protocol family <span class="m">10</span>
+sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+NET: Registered protocol family <span class="m">17</span>
+can: controller area network core <span class="o">(</span>rev <span class="m">20120528</span> abi <span class="m">9</span><span class="o">)</span>
+NET: Registered protocol family <span class="m">29</span>
+can: raw protocol <span class="o">(</span>rev <span class="m">20120528</span><span class="o">)</span>
+can: broadcast manager protocol <span class="o">(</span>rev <span class="m">20161123</span> t<span class="o">)</span>
+can: netlink gateway <span class="o">(</span>rev <span class="m">20130117</span><span class="o">)</span> <span class="nv">max_hops</span><span class="o">=</span><span class="m">1</span>
+Registering SWP/SWPB emulation handler
+<span class="o">[</span>drm<span class="o">]</span> No max horizontal width in DT, using default <span class="m">1920</span>
+<span class="o">[</span>drm<span class="o">]</span> No max vertical height in DT, using default <span class="m">1080</span>
+OF: graph: no port node found in /amba_pl/xilinx_drm
+<span class="o">[</span>drm<span class="o">]</span> Supports vblank timestamp caching Rev <span class="m">2</span> <span class="o">(</span><span class="m">21</span>.10.2013<span class="o">)</span>.
+<span class="o">[</span>drm<span class="o">]</span> No driver support <span class="k">for</span> vblank timestamp query.
+mmc0: new high speed SDHC card at address 59b4
+mmcblk0: mmc0:59b4 USDU1 <span class="m">29</span>.4 GiB 
+ mmcblk0: p1 p2
+Console: switching to colour frame buffer device 240x67
+xilinx-drm amba_pl:xilinx_drm: fb0:  frame buffer device
+<span class="o">[</span>drm<span class="o">]</span> Initialized xilinx_drm <span class="m">1</span>.0.0 <span class="m">20130509</span> on minor <span class="m">0</span>
+ssm2602 <span class="m">0</span>-001a: simple-card: set_sysclk error
+asoc-simple-card amba_pl:sound: ASoC: failed to init 43c20000.axi_i2s_adi-ssm2602-hifi: -22
+asoc-simple-card amba_pl:sound: ASoC: failed to instantiate card -22
+asoc-simple-card: probe of amba_pl:sound failed with error -22
+hctosys: unable to open rtc device <span class="o">(</span>rtc0<span class="o">)</span>
+of_cfs_init
+of_cfs_init: OK
+ALSA device list:
+  No soundcards found.
+EXT4-fs <span class="o">(</span>mmcblk0p2<span class="o">)</span>: couldn<span class="s1">&#39;t mount as ext3 due to feature incompatibilities</span>
+<span class="s1">random: fast init done</span>
+<span class="s1">EXT4-fs (mmcblk0p2): recovery complete</span>
+<span class="s1">EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)</span>
+<span class="s1">VFS: Mounted root (ext4 filesystem) on device 179:2.</span>
+<span class="s1">devtmpfs: mounted</span>
+<span class="s1">Freeing unused kernel memory: 1024K (c0900000 - c0a00000)</span>
+<span class="s1">INIT: usb 1-1: new full-speed USB device number 2 using ci_hdrc</span>
+<span class="s1">version 2.88 booting</span>
+<span class="s1">input:   mini keyboard as /devices/soc0/amba/e0002000.usb/ci_hdrc.0/usb1/1-1/1-1:1.0/0003:1997:2433.0001/input/input0</span>
+<span class="s1">hid-generic 0003:1997:2433.0001: input: USB HID v1.01 Keyboard [  mini keyboard] on usb-ci_hdrc.0-1/input0</span>
+<span class="s1">input:   mini keyboard as /devices/soc0/amba/e0002000.usb/ci_hdrc.0/usb1/1-1/1-1:1.1/0003:1997:2433.0002/input/input1</span>
+<span class="s1">hid-generic 0003:1997:2433.0002: input: USB HID v1.01 Mouse [  mini keyboard] on usb-ci_hdrc.0-1/input1</span>
+<span class="s1">Starting udev</span>
+<span class="s1">input:   mini keyboard as /devices/soc0/amba/e0002000.usb/ci_hdrc.0/usb1/1-1/1-1:1.2/0003:1997:2433.0003/input/input2</span>
+<span class="s1">hid-generic 0003:1997:2433.0003: input: USB HID v1.01 Device [  mini keyboard] on usb-ci_hdrc.0-1/input2</span>
+<span class="s1">udevd[797]: starting version 3.2</span>
+<span class="s1">udevd[798]: starting eudev-3.2</span>
+<span class="s1">EXT4-fs (mmcblk0p2): re-mounted. Opts: data=ordered</span>
+<span class="s1">FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.</span>
+<span class="s1">hwclock: can&#39;</span>t open <span class="s1">&#39;/dev/misc/rtc&#39;</span>: No such file or directory
+Sun Apr <span class="m">25</span> <span class="m">11</span>:20:35 UTC <span class="m">2021</span>
+hwclock: can<span class="s1">&#39;t open &#39;</span>/dev/misc/rtc<span class="s1">&#39;: No such file or directory</span>
+<span class="s1">Starting internet superserver: inetd.</span>
+<span class="s1">INIT: Entering runlevel: 5</span>
+<span class="s1">Configuring network interfaces... IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready</span>
+<span class="s1">udhcpc (v1.24.1) started</span>
+<span class="s1">Sending discover...</span>
+<span class="s1">Sending discover...</span>
+<span class="s1">Sending discover...</span>
+<span class="s1">No lease, forking to background</span>
+<span class="s1">done.</span>
+<span class="s1">Starting Dropbear SSH server: dropbear.</span>
+<span class="s1">hwclock: can&#39;</span>t open <span class="s1">&#39;/dev/misc/rtc&#39;</span>: No such file or directory
+Starting syslogd/klogd: <span class="k">done</span>
+Starting tcf-agent: OK
+/bin/autologin: line <span class="m">1</span>: -e: <span class="nb">command</span> not found
+.7.<span class="o">[</span>r.<span class="o">[</span><span class="m">999</span><span class="p">;</span>999H.<span class="o">[</span>6nroot@Zybo:~#
+</code></pre></div>
+
+</details>
+<p>Check of disk space:
+<div class="highlight"><pre><span></span><code>root@Zybo:~# df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/root                <span class="m">27</span>.9G    <span class="m">298</span>.9M     <span class="m">26</span>.1G   <span class="m">1</span>% /
+devtmpfs                <span class="m">216</span>.7M      <span class="m">4</span>.0K    <span class="m">216</span>.7M   <span class="m">0</span>% /dev
+tmpfs                   <span class="m">249</span>.2M    <span class="m">124</span>.0K    <span class="m">249</span>.1M   <span class="m">0</span>% /run
+tmpfs                   <span class="m">249</span>.2M     <span class="m">40</span>.0K    <span class="m">249</span>.1M   <span class="m">0</span>% /var/volatile
+/dev/mmcblk0p1         <span class="m">1022</span>.0M      <span class="m">6</span>.2M   <span class="m">1015</span>.8M   <span class="m">1</span>% /run/media/mmcblk0p1
+</code></pre></div></p>
+<p>Check of memory:
+<div class="highlight"><pre><span></span><code>root@Zybo:~# free -m
+             total       used       free     shared    buffers     cached
+Mem:           <span class="m">498</span>         <span class="m">36</span>        <span class="m">461</span>          <span class="m">0</span>          <span class="m">4</span>          <span class="m">7</span>
+-/+ buffers/cache:         <span class="m">23</span>        <span class="m">474</span>
+Swap:            <span class="m">0</span>          <span class="m">0</span>          <span class="m">0</span>
+</code></pre></div></p>
+<p>This shows that the second partition on the SD card is mounted properly and contains the root file system.
+Otherwise the file system would be in RAM and we would have not have as much free RAM as we do now (461 MB out of 498 MB).</p>
+<h3 id="linaro-ubuntu-desktop">Linaro Ubuntu Desktop</h3>
+<p>Info from: <a href="https://reference.digilentinc.com/learn/programmable-logic/tutorials/zybo-zybot-guide/start">https://reference.digilentinc.com/learn/programmable-logic/tutorials/zybo-zybot-guide/start</a>
+<div class="highlight"><pre><span></span><code>sudo rm -r /media/ubuntu/rootfs/*
+mkdir -p linaro
+<span class="nb">cd</span> linaro
+wget https://releases.linaro.org/archive/12.09/ubuntu/precise-images/ubuntu-desktop/linaro-precise-ubuntu-desktop-20120923-436.tar.gz .
+sudo tar zxf *.tar.gz
+sudo rsync -a ./ /media/ubuntu/rootfs
+sudo umount /media/ubuntu/BOOT /media/ubuntu/rootfs
+</code></pre></div></p>
+<p>Color issue fix: <a href="https://forums.xilinx.com/t5/Video-and-Audio/Zybo-HDMI-output-Wrong-colors-rendering-on-Linux/td-p/950612">https://forums.xilinx.com/t5/Video-and-Audio/Zybo-HDMI-output-Wrong-colors-rendering-on-Linux/td-p/950612</a></p>
 <h3 id="other-resources">Other resources</h3>
 <ul>
 <li><a href="https://www.instructables.com/Getting-Started-With-PetaLinux/">https://www.instructables.com/Getting-Started-With-PetaLinux/</a></li>
+<li><a href="https://www.instructables.com/Booting-Linux-on-the-ZYBO/">https://www.instructables.com/Booting-Linux-on-the-ZYBO/</a></li>
 <li><a href="https://www.youtube.com/watch?v=iDY5i1td4Wg">https://www.youtube.com/watch?v=iDY5i1td4Wg</a></li>
 </ul>
                 
@@ -1444,7 +2122,7 @@ root@Zybo:~#
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
-          - Built on 2021-04-24 18:33:19.804062+00:00
+          - Built on 2021-04-25 14:52:04.627013+00:00
       </div>
 
       <!-- Social links -->
